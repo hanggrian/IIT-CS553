@@ -1,0 +1,9 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/xjbwHwc9)
+
+### CS553 Cloud Computing Written Assignment 1 Repo
+
+**Illinois Institute of Technology**
+
+**Team Name:** Hendra
+**Students:**
+- Hendra Wijaya (hwijaya@hawk.illinoistech.edu)
