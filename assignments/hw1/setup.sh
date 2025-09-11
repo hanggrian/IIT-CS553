@@ -1,9 +1,6 @@
 #!/bin/bash
 
-readonly END='[0m'
-readonly RED='[91m'
-
-die() { echo; echo "$RED$*$END"; echo; exit 1; } >&2
+source _lib.sh
 
 # package requirements
 sudo apt-get install -y ufw openssh-server python3 \

@@ -1,7 +1,7 @@
 # AI prompts
 
 Here are the relevant AI prompts and their answer. The selected model for this
-homework is Gemini 2.5 Flash, a free model from Google.
+homework is *Gemini 2.5 Flash,* a free model from Google.
 
 ## Prompt 1
 

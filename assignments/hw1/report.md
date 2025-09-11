@@ -1,4 +1,13 @@
-# [Homework #1](https://github.com/hanggrian/IIT-CS553/blob/assets/assignments/hw1.pdf): Report
+# [Homework 1](https://github.com/hanggrian/IIT-CS553/blob/assets/assignments/hw1.pdf): Report
+
+> This project aims to teach you the basics of Linux and Virtual Machines, as
+  well as some basic Q&A about computer systems. Any programming you do in this
+  assignment will be limited to BASH scripting and/or Python. You can use any
+  computer for this part of the assignment (e.g. your laptop running any OS).
+>
+> Here is your assignment. Collect evidence of your work through screen shots
+  and log files. You will write a report at the end that outlines what you have
+  done to complete this assignment.
 
 ## Problem 1
 
@@ -78,7 +87,7 @@ login is successfully tested. This process is documented on `setup.sh`.
 > 1.  ssh
 
 `ssh` command facilitates secure remote login. The first argument is the remote
-server destination.
+server destination.iperf -s -w $SERVER_WINDOW_SIZE
 
 <img
   width="320"

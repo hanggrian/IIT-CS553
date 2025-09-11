@@ -1,30 +1,21 @@
 #!/bin/bash
 
-readonly END='[0m'
-readonly BOLD='[1m'
-readonly RED='[91m'
-readonly GREEN='[92m'
-readonly YELLOW='[93m'
+source _lib.sh
+require "$1" \
+  "$#" \
+  2 \
+  'Usage: generate_dataset.sh <filename> <record_count>
+Example: generate_dataset.sh file.txt 100
 
-warn() { echo "$YELLOW$*$END"; } >&2
-die() { echo; echo "$RED$*$END"; echo; exit 1; } >&2
+Generates a benchmark report and logs its completion in the background.
 
-if [[ "$#" -ne 2 ]]; then
-  die "For usage information, run with the help flag '-h'."
-elif [[ "$1" == '-h' || "$1" == '--help' ]]; then
-  echo 'Usage: generate_dataset.sh <filename> <num_records>'
-  echo 'Example: generate_dataset.sh file.txt 100'
-  echo
-  echo 'Generates a benchmark report and logs its completion in the background.'
-  echo
-  echo 'Arguments:'
-  echo '  <filename>     The name of the output file to create.'
-  echo '  <num_records>  The number of records to generate.'
-  exit 0
-fi
+Arguments:
+  <filename>      The name of the output file to create.
+  <record_count>  The number of records to generate.'
 
 readonly FILENAME="$1"
-readonly NUM_RECORDS="$2"
+readonly RECORD_COUNT="$2"
+
 readonly MAX_DURATION=10
 
 CHARACTERS="!\"#\$%&'()*+,-./0123456789:;<=>?@" && \
@@ -32,7 +23,10 @@ CHARACTERS="!\"#\$%&'()*+,-./0123456789:;<=>?@" && \
   CHARACTERS+="abcdefghijklmnopqrstuvwxyz{|}~" && \
   readonly CHARACTERS
 
-if ! [[ "$NUM_RECORDS" =~ ^[0-9]+$ ]] || [ "$NUM_RECORDS" -le 0 ]; then
+if ! [[ "$FILENAME" == *.* ]]; then
+  die 'Missing file extension.'
+fi
+if ! [[ "$RECORD_COUNT" =~ ^[0-9]+$ ]] || [ "$RECORD_COUNT" -le 0 ]; then
   die 'Non-positive number of records.'
 fi
 
@@ -52,23 +46,21 @@ main() {
   true > "$FILENAME"
 
   echo -n 'Writing entries'
-  for ((i=1; i<=NUM_RECORDS; i++)); do
+  for ((i=1; i<=RECORD_COUNT; i++)); do
     echo "$(random_32bit_int) $(random_32bit_int) $(random_ascii_string)" >> \
       "$FILENAME"
 
-    local quarter=$((NUM_RECORDS / 4))
+    local quarter=$((RECORD_COUNT / 4))
     if [[ $((i % quarter)) -eq 0 ]] && [[ "$quarter" -gt 0 ]]; then
-      echo -n "...$((i * 100 / NUM_RECORDS))%"
+      echo -n "...$((i * 100 / RECORD_COUNT))%"
     fi
   done
 
   echo
-  echo "${GREEN}Created $NUM_RECORDS records.$END"
+  echo "${GREEN}Created $RECORD_COUNT records.$END"
 }
 
-start_time=$(date +%s)
-(time main "$FILENAME" "$NUM_RECORDS") 2>/dev/null
-duration=$(($(date +%s) - start_time))
+duration=$(timed main "$FILENAME" "$RECORD_COUNT")
 
 echo
 echo "Total execution time: $BOLD$duration seconds$END"
