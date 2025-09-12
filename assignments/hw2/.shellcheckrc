@@ -1,0 +1,2 @@
+# Lazy sourcing to another script, mostly _lib.sh.
+external-sources=true

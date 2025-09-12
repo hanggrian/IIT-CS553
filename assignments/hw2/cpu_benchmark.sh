@@ -27,13 +27,13 @@ benchmark() {
     --threads="$thread_count" \
     run)
 
-  average_latency=$(echo "$sysbench_output" | \
+  latency=$(echo "$sysbench_output" | \
     grep 'avg:' | \
     awk '{print $NF}')
   throughput=$(echo "$sysbench_output" | \
     grep 'events per second:' | \
     awk '{print $NF}')
-  echo "$average_latency $throughput"
+  echo "$latency $throughput"
 }
 
 echo "Preparing '$FILENAME'..."

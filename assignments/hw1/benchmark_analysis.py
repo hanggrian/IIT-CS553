@@ -7,7 +7,7 @@ from sys import exit, stderr
 from time import time
 
 from matplotlib.pyplot import figure, plot, xlabel, ylabel, title, legend, grid, xscale, yscale, \
-    tight_layout, savefig, show
+    tight_layout, show
 
 END = '\033[0m'
 BOLD = '\033[1m'
@@ -15,19 +15,22 @@ RED = '\033[91m'
 GREEN = '\033[92m'
 YELLOW = '\033[93m'
 
-SCALES = [1000, 10000, 1000000]
+
+def warn(message: str) -> None:
+    print(f'{YELLOW}{message}{END}', file=stderr)
 
 
-def warn(message):
-    print(f"{YELLOW}{message}{END}", file=stderr)
-
-
-def die(message):
-    print(f"\n{RED}{message}{END}\n", file=stderr)
+def die(message: str) -> None:
+    print(f'\n{RED}{message}{END}\n', file=stderr)
     exit(1)
 
 
-def run_timed(command):
+GENERATE_SCRIPT = './generate_dataset.sh'
+SORT_SCRIPT = './sort_dataset.sh'
+SCALES = [1000, 10000, 1000000]
+
+
+def run_timed(command: str) -> float | None:
     """Run a command and return the execution time in seconds."""
     start_time = time()
     try:
@@ -38,35 +41,35 @@ def run_timed(command):
         return None
 
 
-def main():
+if __name__ == '__main__':
     print('Starting benchmark...')
 
-    if not exists('./generate_dataset.sh') or not exists('./sort_data.sh'):
+    if not exists(GENERATE_SCRIPT) or not exists(SORT_SCRIPT):
         die('Required scripts not found.')
 
     generation_times = []
     sorting_times = []
 
     for scale in SCALES:
-        print(f"Testing {scale:,} records...")
+        print(f'Testing {scale:,} records...')
 
-        filename = f"output_{scale}.txt"
-        filename_sorted = f"{splitext(filename)[0]}_sorted{splitext(filename)[1]}"
+        filename = f'temp_{scale}.txt'
+        filename_sorted = f'{splitext(filename)[0]}_sorted{splitext(filename)[1]}'
 
-        gen_time = run_timed(f"./generate_dataset.sh {filename} {scale}")
-        if gen_time is None:
-            die(f"Failed to generate records.")
+        generate_time = run_timed(f'{GENERATE_SCRIPT} {filename} {scale}')
+        if generate_time is None:
+            die('Failed to generate records.')
 
-        sort_time = run_timed(f"./sort_data.sh {filename}")
+        sort_time = run_timed(f'{SORT_SCRIPT} {filename}')
         if sort_time is None:
-            die(f"Failed to sort records.")
+            die('Failed to sort records.')
 
-        generation_times.append(gen_time)
+        generation_times.append(generate_time)
         sorting_times.append(sort_time)
 
-        print(f"{GREEN}Completed at {gen_time + sort_time:.2f}s.{END}")
+        print(f'{GREEN}Completed at {generate_time + sort_time:.2f}s.{END}')
 
-        for file_name in [filename, f"{filename_sorted}"]:
+        for file_name in [filename, f'{filename_sorted}']:
             if exists(file_name):
                 remove(file_name)
 
@@ -75,7 +78,7 @@ def main():
     plot(SCALES, generation_times, 'o-', label='Generation time', linewidth=2)
     plot(SCALES, sorting_times, 's-', label='Sorting time', linewidth=2)
 
-    xlabel('# of Records')
+    xlabel('# of records')
     ylabel('Duration')
     title('Generation vs. sorting time')
 
@@ -89,14 +92,8 @@ def main():
         yscale('log')
 
     tight_layout()
-    savefig('benchmark_results.png')
     show()
 
-    print("Graph saved as 'benchmark_results.png'")
     print()
     print('Goodbye!')
     exit(0)
-
-
-if __name__ == '__main__':
-    main()

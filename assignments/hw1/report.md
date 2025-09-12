@@ -739,7 +739,7 @@ branding for each company: Hyper-threading for Intel and SMT for AMD.
 >     1.  NVIDIA GPU
 
 Below are the fastest processors in their respective categories as of 2025. The
-price section is the tracked release price instead of MSRP (street value).
+price section is the MSRP listed on official websites instead of street value.
 
 - Intel CPU (x86)
 
@@ -748,17 +748,18 @@ price section is the tracked release price instead of MSRP (street value).
 
   Class | Model | Speed | Cores | TDP | Price
   --- | --- | --- | --- | --- | ---
-  Mobile | Core Ultra 9 285HX | 2.1&ndash;5.5GHz | 16 cores, 24 threads | 55-160W
+  Mobile | Core Ultra 9 285HX | 2.1&ndash;5.5GHz | 16 cores, 24 threads | 55-160W | OEM
   Desktop | Core Ultra 9 285K | 3.2&ndash;5.7GHz | 24 cores, 36 threads | 125-250W | $599
-  Server | Xeon 6978P | 2.1&ndash;3.9GHz | 120 cores, 240 threads | 500W | $11,025
+  Workstation | Xeon w9-3495X | 1.9&ndash;4.8GHz | 56 cores, 112 threads | 350-420W | $5,889
+  Server | Xeon Max 9480 | 1.9&ndash;3.5GHz | 56 cores, 112 threads | 350W | $12,980
 - AMD CPU (x86)
 
-  Higher-end AMD CPUs are divided into more than one logical processor, known as
-  CCD. In the X3D version, one of those CCDs has a larger cache size.
+  Higher-end AMD CPUs are divided into more than one physical die, known as CCD.
+  In the X3D version, one of those CCDs has a larger cache size.
 
   Class | Model | Speed | Cores | TDP | Price
   --- | --- | --- | --- | --- | ---
-  Mobile | Ryzen AI 9 HX 375 | 3.3&ndash;5.1GHz | 12 cores, 24 threads | 15-54W
+  Mobile | Ryzen AI 9 HX 375 | 3.3&ndash;5.1GHz | 12 cores, 24 threads | 15-54W | OEM
   Desktop | Ryzen 9 9950X3D | 4.2&ndash;5.7GHz | 16 cores, 32 threads | 170W | $699
   Workstation | Ryzen Threadripper 9980X | 3.2&ndash;5.4GHz | 64 cores, 128 threads | 350W | $4,999
   Server | EPYC 9965 | 2.25&ndash;3.7GHz | 192 cores, 384 threads | 500W | $14,813
@@ -777,11 +778,11 @@ price section is the tracked release price instead of MSRP (street value).
   Class | Model | Speed | Cores | TDP | Price
   --- | --- | --- | --- | --- | ---
   Server | CN8890 | 1.9GHz | 48 cores, 48 threads | 575W | $1,999
-- NVIDIA GPU (ARM)
+- NVIDIA GPU
 
   Class | Model | Speed | VRAM | TDP | Price
   --- | --- | --- | --- | --- | ---
-  Mobile | RTX 5090 Laptop | 1.59&ndash;2.16GHz | 24GB | 95-150W
+  Mobile | RTX 5090 Laptop | 1.59&ndash;2.16GHz | 24GB | 95-150W | OEM
   Desktop | RTX 5090 | 2.01&ndash;2.41GHz | 32GB | 500W | $1,999
   Workstation | RTX PRO 6000 | 1.59&ndash;2.28GHz | 96GB | 600W | $8,565
   Server | B100 | 1.66&ndash;1.83GHz | 192GB | 700W | $11,025

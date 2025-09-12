@@ -34,6 +34,7 @@ benchmark() {
     "--file-total-size=$TOTAL_SIZE"
     "--file-test-mode=$TEST_MODE"
     "--file-io-mode=$IO_MODE"
+    "--file-extra-flags=$EXTRA_FLAGS"
     "--threads=$thread_count"
   )
 
@@ -41,13 +42,13 @@ benchmark() {
   local sysbench_output && sysbench_output=$("${sysbench_command[@]}" run)
   "${sysbench_command[@]}" cleanup > /dev/null 2>&1
 
-  total_operations=$(echo "$sysbench_output" | \
+  operations=$(echo "$sysbench_output" | \
     grep 'total number of events:' | \
     awk '{print $NF}')
   throughput=$(echo "$sysbench_output" | \
     grep 'read, MiB/s:' | \
     awk '{print $NF}')
-  echo "$total_operations $throughput"
+  echo "$operations $throughput"
 }
 
 echo "Preparing '$FILENAME'..."

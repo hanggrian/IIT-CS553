@@ -31,6 +31,25 @@
   (baremetal/container/VM) orchestration, run benchmark and Python to analyze
   the results and plotting.
 
+Each benchmark script produces a text file that reports the running performance,
+which, in this instance, is for strong scaling studies. Once the benchmarks are
+complete, the values from the text files are manually collected into
+`benchmark_result.json`. The Python script uses this resource to plot bar
+graphs.
+
+<img
+  width="320"
+  alt="Screenshot 1"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot1.png">
+
+<span style="color: yellow;">
+  Data from <code>benchmark_result.json</code> is currently measured in local
+  computer for testing purposes.
+  <b>
+    Replace with Chameleon Cloud later.
+  </b>
+</span>
+
 ## Problem 1
 
 > **CPU:**
@@ -58,27 +77,39 @@
 >   - Container: 90%
 >   - VM: 80%
 
+
+
+<img
+  width="320"
+  alt="Screenshot 2.1"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot2_1.png">
+
+<img
+  width="640"
+  alt="Screenshot 2.2"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot2_2.png">
+
 Virtualization type | Threads | Avg. latency<br>(ms) | Measured throughput<br>(events per second) | Overheads
 --- | --- | --- | --- | ---
-Bare-metal | 1
+Bare-metal | 1 | | | 100%
 Container | 1
 VM | 1
-Bare-metal | 2
+Bare-metal | 2 | | | 100%
 Container | 2
 VM | 2
-Bare-metal | 4
+Bare-metal | 4 | | | 100%
 Container | 4
 VM | 4
-Bare-metal | 8
+Bare-metal | 8 | | | 100%
 Container | 8
 VM | 8
-Bare-metal | 16
+Bare-metal | 16 | | | 100%
 Container | 16
 VM | 16
-Bare-metal | 32
+Bare-metal | 32 | | | 100%
 Container | 32
 VM | 32
-Bare-metal | 64
+Bare-metal | 64 | | | 100%
 Container | 64
 VM | 64
 
@@ -102,27 +133,37 @@ VM | 64
 >   Similar to efficiency example in CPU benchmark, the efficiency denotes a
     relative performance of a virtualization type vs. baremetal.
 
+<img
+  width="320"
+  alt="Screenshot 3.1"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot3_1.png">
+
+<img
+  width="640"
+  alt="Screenshot 3.2"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot3_2.png">
+
 Virtualization type | Threads | Total operations | Throughput<br>(MiB/sec) | Efficiency
 --- | --- | --- | --- | --- |
-Bare-metal | 1
+Bare-metal | 1 | | | 100%
 Container | 1
 VM | 1
-Bare-metal | 2
+Bare-metal | 2 | | | 100%
 Container | 2
 VM | 2
-Bare-metal | 4
+Bare-metal | 4 | | | 100%
 Container | 4
 VM | 4
-Bare-metal | 8
+Bare-metal | 8 | | | 100%
 Container | 8
 VM | 8
-Bare-metal | 16
+Bare-metal | 16 | | | 100%
 Container | 16
 VM | 16
-Bare-metal | 32
+Bare-metal | 32 | | | 100%
 Container | 32
 VM | 32
-Bare-metal | 64
+Bare-metal | 64 | | | 100%
 Container | 64
 VM | 64
 
@@ -149,27 +190,37 @@ VM | 64
 >   Similar to efficiency example in CPU benchmark, the efficiency denotes a
     relative performance of a virtualization type vs. baremetal.
 
+<img
+  width="320"
+  alt="Screenshot 4.1"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot4_1.png">
+
+<img
+  width="640"
+  alt="Screenshot 4.2"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot4_2.png">
+
 Virtualization type | Threads | Total operations | Throughput<br>(MiB/sec) | Efficiency
 --- | --- | --- | --- | --- |
-Bare-metal | 1
+Bare-metal | 1 | | | 100%
 Container | 1
 VM | 1
-Bare-metal | 2
+Bare-metal | 2 | | | 100%
 Container | 2
 VM | 2
-Bare-metal | 4
+Bare-metal | 4 | | | 100%
 Container | 4
 VM | 4
-Bare-metal | 8
+Bare-metal | 8 | | | 100%
 Container | 8
 VM | 8
-Bare-metal | 16
+Bare-metal | 16 | | | 100%
 Container | 16
 VM | 16
-Bare-metal | 32
+Bare-metal | 32 | | | 100%
 Container | 32
 VM | 32
-Bare-metal | 64
+Bare-metal | 64 | | | 100%
 Container | 64
 VM | 64
 
@@ -197,26 +248,41 @@ VM | 64
 >   Similar to efficiency example in CPU benchmark, the efficiency denotes a
     relative performance of a virtualization type vs. baremetal.
 
+<img
+  width="320"
+  alt="Screenshot 5.1"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot5_1.png">
+
+<img
+  width="320"
+  alt="Screenshot 5.2"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot5_2.png">
+
+<img
+  width="640"
+  alt="Screenshot 5.3"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot5_3.png">
+
 Virtualization type | Threads | Total operations | Measured throughput<br>(Gbits/sec) | Efficiency
 --- | --- | --- | --- | --- |
-Bare-metal | 1
+Bare-metal | 1 | | | 100%
 Container | 1
 VM | 1
-Bare-metal | 2
+Bare-metal | 2 | | | 100%
 Container | 2
 VM | 2
-Bare-metal | 4
+Bare-metal | 4 | | | 100%
 Container | 4
 VM | 4
-Bare-metal | 8
+Bare-metal | 8 | | | 100%
 Container | 8
 VM | 8
-Bare-metal | 16
+Bare-metal | 16 | | | 100%
 Container | 16
 VM | 16
-Bare-metal | 32
+Bare-metal | 32 | | | 100%
 Container | 32
 VM | 32
-Bare-metal | 64
+Bare-metal | 64 | | | 100%
 Container | 64
 VM | 64

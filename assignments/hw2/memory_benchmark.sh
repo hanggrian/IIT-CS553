@@ -33,13 +33,13 @@ benchmark() {
     --threads="$thread_count" \
     run)
 
-  total_operations=$(echo "$sysbench_output" | \
+  operations=$(echo "$sysbench_output" | \
     grep 'total number of events:' | \
     awk '{print $NF}')
   throughput=$(echo "$sysbench_output" | \
     grep 'transferred' | \
     awk '{print $1}')
-  echo "$total_operations $throughput"
+  echo "$operations $throughput"
 }
 
 echo "Preparing '$FILENAME'..."

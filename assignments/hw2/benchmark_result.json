@@ -1,0 +1,454 @@
+{
+  "cpu": {
+    "bare-metal": {
+      "1": {
+        "latency": 18.55,
+        "throughput": 53.91,
+        "overheads": 100
+      },
+      "2": {
+        "latency": 18.51,
+        "throughput": 108.00,
+        "overheads": 100
+      },
+      "4": {
+        "latency": 18.53,
+        "throughput": 215.80,
+        "overheads": 100
+      },
+      "8": {
+        "latency": 20.07,
+        "throughput": 398.21,
+        "overheads": 100
+      },
+      "16": {
+        "latency": 29.38,
+        "throughput": 543.80,
+        "overheads": 100
+      },
+      "32": {
+        "latency": 58.70,
+        "throughput": 543.76,
+        "overheads": 100
+      },
+      "64": {
+        "latency": 116.76,
+        "throughput": 543.22,
+        "overheads": 100
+      }
+    },
+    "container": {
+      "1": {
+        "latency": 20.61,
+        "throughput": 48.52,
+        "overheads": 90
+      },
+      "2": {
+        "latency": 20.57,
+        "throughput": 97.20,
+        "overheads": 90
+      },
+      "4": {
+        "latency": 20.59,
+        "throughput": 194.22,
+        "overheads": 90
+      },
+      "8": {
+        "latency": 22.30,
+        "throughput": 358.39,
+        "overheads": 90
+      },
+      "16": {
+        "latency": 32.64,
+        "throughput": 489.42,
+        "overheads": 90
+      },
+      "32": {
+        "latency": 65.22,
+        "throughput": 489.38,
+        "overheads": 90
+      },
+      "64": {
+        "latency": 129.73,
+        "throughput": 488.90,
+        "overheads": 90
+      }
+    },
+    "vm": {
+      "1": {
+        "latency": 23.19,
+        "throughput": 43.13,
+        "overheads": 80
+      },
+      "2": {
+        "latency": 23.14,
+        "throughput": 86.40,
+        "overheads": 80
+      },
+      "4": {
+        "latency": 23.16,
+        "throughput": 172.64,
+        "overheads": 80
+      },
+      "8": {
+        "latency": 25.09,
+        "throughput": 318.57,
+        "overheads": 80
+      },
+      "16": {
+        "latency": 36.73,
+        "throughput": 435.04,
+        "overheads": 80
+      },
+      "32": {
+        "latency": 73.38,
+        "throughput": 435.01,
+        "overheads": 80
+      },
+      "64": {
+        "latency": 145.95,
+        "throughput": 434.58,
+        "overheads": 80
+      }
+    }
+  },
+  "disk": {
+    "bare-metal": {
+      "1": {
+        "operations": 173915,
+        "throughput": 67.93,
+        "efficiency": 100
+      },
+      "2": {
+        "operations": 328852,
+        "throughput": 128.44,
+        "efficiency": 100
+      },
+      "4": {
+        "operations": 420569,
+        "throughput": 164.26,
+        "efficiency": 100
+      },
+      "8": {
+        "operations": 720003,
+        "throughput": 281.21,
+        "efficiency": 100
+      },
+      "16": {
+        "operations": 1062962,
+        "throughput": 415.16,
+        "efficiency": 100
+      },
+      "32": {
+        "operations": 1288097,
+        "throughput": 503.08,
+        "efficiency": 100
+      },
+      "64": {
+        "operations": 1373176,
+        "throughput": 536.29,
+        "efficiency": 100
+      }
+    },
+    "container": {
+      "1": {
+        "operations": 156524,
+        "throughput": 61.14,
+        "efficiency": 90
+      },
+      "2": {
+        "operations": 295967,
+        "throughput": 115.60,
+        "efficiency": 90
+      },
+      "4": {
+        "operations": 378512,
+        "throughput": 147.83,
+        "efficiency": 90
+      },
+      "8": {
+        "operations": 648003,
+        "throughput": 253.09,
+        "efficiency": 90
+      },
+      "16": {
+        "operations": 956666,
+        "throughput": 373.64,
+        "efficiency": 90
+      },
+      "32": {
+        "operations": 1159287,
+        "throughput": 452.77,
+        "efficiency": 90
+      },
+      "64": {
+        "operations": 1235858,
+        "throughput": 482.66,
+        "efficiency": 90
+      }
+    },
+    "vm": {
+      "1": {
+        "operations": 139132,
+        "throughput": 54.34,
+        "efficiency": 80
+      },
+      "2": {
+        "operations": 263082,
+        "throughput": 102.75,
+        "efficiency": 80
+      },
+      "4": {
+        "operations": 336455,
+        "throughput": 131.41,
+        "efficiency": 80
+      },
+      "8": {
+        "operations": 576002,
+        "throughput": 224.97,
+        "efficiency": 80
+      },
+      "16": {
+        "operations": 850370,
+        "throughput": 332.13,
+        "efficiency": 80
+      },
+      "32": {
+        "operations": 1030478,
+        "throughput": 402.46,
+        "efficiency": 80
+      },
+      "64": {
+        "operations": 1098541,
+        "throughput": 429.03,
+        "efficiency": 80
+      }
+    }
+  },
+  "memory": {
+    "bare-metal": {
+      "1": {
+        "operations": 24369862,
+        "throughput": 23798.69,
+        "efficiency": 100
+      },
+      "2": {
+        "operations": 47834665,
+        "throughput": 46713.54,
+        "efficiency": 100
+      },
+      "4": {
+        "operations": 91631258,
+        "throughput": 89483.65,
+        "efficiency": 100
+      },
+      "8": {
+        "operations": 125829120,
+        "throughput": 122880.00,
+        "efficiency": 100
+      },
+      "16": {
+        "operations": 125829120,
+        "throughput": 122880.00,
+        "efficiency": 100
+      },
+      "32": {
+        "operations": 125829120,
+        "throughput": 122880.00,
+        "efficiency": 100
+      },
+      "64": {
+        "operations": 125829120,
+        "throughput": 122880.00,
+        "efficiency": 100
+      }
+    },
+    "container": {
+      "1": {
+        "operations": 21932876,
+        "throughput": 21418.82,
+        "efficiency": 90
+      },
+      "2": {
+        "operations": 43051199,
+        "throughput": 42042.19,
+        "efficiency": 90
+      },
+      "4": {
+        "operations": 82468132,
+        "throughput": 80535.29,
+        "efficiency": 90
+      },
+      "8": {
+        "operations": 113246208,
+        "throughput": 110592.00,
+        "efficiency": 90
+      },
+      "16": {
+        "operations": 113246208,
+        "throughput": 110592.00,
+        "efficiency": 90
+      },
+      "32": {
+        "operations": 113246208,
+        "throughput": 110592.00,
+        "efficiency": 90
+      },
+      "64": {
+        "operations": 113246208,
+        "throughput": 110592.00,
+        "efficiency": 90
+      }
+    },
+    "vm": {
+      "1": {
+        "operations": 19495890,
+        "throughput": 19038.95,
+        "efficiency": 80
+      },
+      "2": {
+        "operations": 38267732,
+        "throughput": 37370.83,
+        "efficiency": 80
+      },
+      "4": {
+        "operations": 73305006,
+        "throughput": 71586.92,
+        "efficiency": 80
+      },
+      "8": {
+        "operations": 100663296,
+        "throughput": 98304.00,
+        "efficiency": 80
+      },
+      "16": {
+        "operations": 100663296,
+        "throughput": 98304.00,
+        "efficiency": 80
+      },
+      "32": {
+        "operations": 100663296,
+        "throughput": 98304.00,
+        "efficiency": 80
+      },
+      "64": {
+        "operations": 100663296,
+        "throughput": 98304.00,
+        "efficiency": 80
+      }
+    }
+  },
+  "network": {
+    "bare-metal": {
+      "1": {
+        "operations": 67.0,
+        "throughput": 57.5,
+        "efficiency": 100
+      },
+      "2": {
+        "operations": 120,
+        "throughput": 103,
+        "efficiency": 100
+      },
+      "4": {
+        "operations": 184,
+        "throughput": 158,
+        "efficiency": 100
+      },
+      "8": {
+        "operations": 200,
+        "throughput": 171,
+        "efficiency": 100
+      },
+      "16": {
+        "operations": 173,
+        "throughput": 149,
+        "efficiency": 100
+      },
+      "32": {
+        "operations": 111,
+        "throughput": 94.7,
+        "efficiency": 100
+      },
+      "64": {
+        "operations": 95.9,
+        "throughput": 81.9,
+        "efficiency": 100
+      }
+    },
+    "container": {
+      "1": {
+        "operations": 60.3,
+        "throughput": 51.8,
+        "efficiency": 90
+      },
+      "2": {
+        "operations": 108,
+        "throughput": 92.7,
+        "efficiency": 90
+      },
+      "4": {
+        "operations": 165.6,
+        "throughput": 142.2,
+        "efficiency": 90
+      },
+      "8": {
+        "operations": 180,
+        "throughput": 153.9,
+        "efficiency": 90
+      },
+      "16": {
+        "operations": 155.7,
+        "throughput": 134.1,
+        "efficiency": 90
+      },
+      "32": {
+        "operations": 99.9,
+        "throughput": 85.2,
+        "efficiency": 90
+      },
+      "64": {
+        "operations": 86.3,
+        "throughput": 73.7,
+        "efficiency": 90
+      }
+    },
+    "vm": {
+      "1": {
+        "operations": 53.6,
+        "throughput": 46.0,
+        "efficiency": 80
+      },
+      "2": {
+        "operations": 96.0,
+        "throughput": 82.4,
+        "efficiency": 80
+      },
+      "4": {
+        "operations": 147.2,
+        "throughput": 126.4,
+        "efficiency": 80
+      },
+      "8": {
+        "operations": 160.0,
+        "throughput": 136.8,
+        "efficiency": 80
+      },
+      "16": {
+        "operations": 138.4,
+        "throughput": 119.2,
+        "efficiency": 80
+      },
+      "32": {
+        "operations": 88.8,
+        "throughput": 75.8,
+        "efficiency": 80
+      },
+      "64": {
+        "operations": 76.7,
+        "throughput": 65.5,
+        "efficiency": 80
+      }
+    }
+  }
+}

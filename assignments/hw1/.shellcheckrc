@@ -1,0 +1,5 @@
+# Lazy sourcing to another script, mostly _lib.sh.
+external-sources=true
+
+# Functions executed within parentheses are not detected by ShellCheck.
+disable=SC2329
