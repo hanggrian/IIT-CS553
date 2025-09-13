@@ -48,7 +48,7 @@ for thread_count in "${THREAD_COUNTS[@]}"; do
 done
 
 echo 'Filtering...'
-filename_sorted="${FILENAME%.*}_sorted.${FILENAME##*.}"
+filename_filtered="${FILENAME%.*}_filtered.${FILENAME##*.}"
 grep -E '^\[[[:space:]]*1\] 0\.0*-10|^\[SUM-(2|4|8|16|32|64)\]' "$FILENAME" |
   while read -r line; do
     if [[ $line =~ ^\[[[:space:]]*1\] ]]; then
@@ -64,8 +64,8 @@ grep -E '^\[[[:space:]]*1\] 0\.0*-10|^\[SUM-(2|4|8|16|32|64)\]' "$FILENAME" |
     fi
 
     echo "$thread_count $operations $throughput"
-  done > "$filename_sorted"
-echo "${GREEN}Output written to '$filename_sorted$END'."
+  done > "$filename_filtered"
+echo "${GREEN}Output written to '$filename_filtered$END'."
 echo 'Benchmark complete.'
 
 echo

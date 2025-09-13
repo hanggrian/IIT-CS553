@@ -748,10 +748,10 @@ price section is the MSRP listed on official websites instead of street value.
 
   Class | Model | Speed | Cores | TDP | Price
   --- | --- | --- | --- | --- | ---
-  Mobile | Core Ultra 9 285HX | 2.1&ndash;5.5GHz | 16 cores, 24 threads | 55-160W | OEM
-  Desktop | Core Ultra 9 285K | 3.2&ndash;5.7GHz | 24 cores, 36 threads | 125-250W | $599
-  Workstation | Xeon w9-3495X | 1.9&ndash;4.8GHz | 56 cores, 112 threads | 350-420W | $5,889
-  Server | Xeon Max 9480 | 1.9&ndash;3.5GHz | 56 cores, 112 threads | 350W | $12,980
+  Mobile | Core Ultra 9 285HX | 2.1&ndash;5.5GHz | 16 cores, 24 threads | 55&ndash;160 W | OEM
+  Desktop | Core Ultra 9 285K | 3.2&ndash;5.7GHz | 24 cores, 36 threads | 125&ndash;250 W | $599
+  Workstation | Xeon w9-3495X | 1.9&ndash;4.8GHz | 56 cores, 112 threads | 350&ndash;420 W | $5,889
+  Server | Xeon Max 9480 | 1.9&ndash;3.5GHz | 56 cores, 112 threads | 350 W | $12,980
 - AMD CPU (x86)
 
   Higher-end AMD CPUs are divided into more than one physical die, known as CCD.
@@ -759,10 +759,10 @@ price section is the MSRP listed on official websites instead of street value.
 
   Class | Model | Speed | Cores | TDP | Price
   --- | --- | --- | --- | --- | ---
-  Mobile | Ryzen AI 9 HX 375 | 3.3&ndash;5.1GHz | 12 cores, 24 threads | 15-54W | OEM
-  Desktop | Ryzen 9 9950X3D | 4.2&ndash;5.7GHz | 16 cores, 32 threads | 170W | $699
-  Workstation | Ryzen Threadripper 9980X | 3.2&ndash;5.4GHz | 64 cores, 128 threads | 350W | $4,999
-  Server | EPYC 9965 | 2.25&ndash;3.7GHz | 192 cores, 384 threads | 500W | $14,813
+  Mobile | Ryzen AI 9 HX 375 | 3.3&ndash;5.1GHz | 12 cores, 24 threads | 15&ndash;54 W | OEM
+  Desktop | Ryzen 9 9950X3D | 4.2&ndash;5.7GHz | 16 cores, 32 threads | 170 W | $699
+  Workstation | Ryzen Threadripper 9980X | 3.2&ndash;5.4GHz | 64 cores, 128 threads | 350 W | $4,999
+  Server | EPYC 9965 | 2.25&ndash;3.7GHz | 192 cores, 384 threads | 500 W | $14,813
 - IBM CPU (Power9)
 
   The IBM enterprise motherboard supports multiple CPUs, and each CPU may have a
@@ -770,22 +770,22 @@ price section is the MSRP listed on official websites instead of street value.
 
   Class | Model | Speed | Cores | TDP | Price
   --- | --- | --- | --- | --- | ---
-  Server | Power System E980 | 3.55&ndash;4GHz | 12 cores, 96 threads | 240W | $1,291 @month
+  Server | Power System E980 | 3.55&ndash;4GHz | 12 cores, 96 threads | 240 W | $1,291 @month
 - ThunderX CPU (ARM)
 
   Multithreading is not available in ARM CPUs.
 
   Class | Model | Speed | Cores | TDP | Price
   --- | --- | --- | --- | --- | ---
-  Server | CN8890 | 1.9GHz | 48 cores, 48 threads | 575W | $1,999
+  Server | CN8890 | 1.9GHz | 48 cores, 48 threads | 575 W | $1,999
 - NVIDIA GPU
 
   Class | Model | Speed | VRAM | TDP | Price
   --- | --- | --- | --- | --- | ---
-  Mobile | RTX 5090 Laptop | 1.59&ndash;2.16GHz | 24GB | 95-150W | OEM
-  Desktop | RTX 5090 | 2.01&ndash;2.41GHz | 32GB | 500W | $1,999
-  Workstation | RTX PRO 6000 | 1.59&ndash;2.28GHz | 96GB | 600W | $8,565
-  Server | B100 | 1.66&ndash;1.83GHz | 192GB | 700W | $11,025
+  Mobile | RTX 5090 Laptop | 1.59&ndash;2.16GHz | 24GB | 95&ndash;150 W | OEM
+  Desktop | RTX 5090 | 2.01&ndash;2.41GHz | 32GB | 500 W | $1,999
+  Workstation | RTX PRO 6000 | 1.59&ndash;2.28GHz | 96GB | 600 W | $8,565
+  Server | B100 | 1.66&ndash;1.83GHz | 192GB | 700 W | $11,025
 
 > 3.  Why do we not have processors running at 1THz today (as might have been
       predicted in the year 2000)?

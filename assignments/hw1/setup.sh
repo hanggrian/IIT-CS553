@@ -3,7 +3,8 @@
 source _lib.sh
 
 # package requirements
-sudo apt-get install -y ufw openssh-server python3 \
+sudo apt update
+sudo apt install -y ufw openssh-server python3 \
   gcc plocate traceroute pwgen
 
 # enable firewall and block incoming ports

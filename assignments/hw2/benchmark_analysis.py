@@ -13,7 +13,7 @@ GREEN = '\033[92m'
 YELLOW = '\033[93m'
 
 RESULT_FILE = 'benchmark_result.json'
-THREADS = [1, 2, 4, 8, 16, 32, 64]
+THREADS = [1, 2, 4, 8, 16]
 
 
 def warn(message: str) -> None:
@@ -47,23 +47,23 @@ def latency_graph(
     figure, ((axes1, axes2), (axes3, axes4)) = subplots(2, 2, figsize=(10, 6))
     figure.suptitle(f'{hardware_type} benchmark', fontsize=16, fontweight='bold')
 
-    for host_type, metric_type in collection.items():
+    for host_type, metric in collection.items():
         axes1.plot(
             THREADS,
-            [metric_type[str(t)]['latency'] for t in THREADS], 's-',
-            label=f"{host_type}",
+            [metric[str(t)]['latency'] for t in THREADS], 's-',
+            label=f'{host_type}',
         )
         axes2.plot(
             THREADS,
-            [metric_type[str(t)]['throughput'] for t in THREADS],
+            [metric[str(t)]['throughput'] for t in THREADS],
             'o-',
-            label=f"{host_type}",
+            label=f'{host_type}',
         )
         axes3.plot(
             THREADS,
-            [metric_type[str(t)]['overheads'] for t in THREADS],
+            [metric[str(t)]['overheads'] for t in THREADS],
             '^-',
-            label=f"{host_type}",
+            label=f'{host_type}',
         )
 
     axes1.set_xlabel('# of threads')
@@ -104,24 +104,24 @@ def operations_graph(
     figure, ((axes1, axes2), (axes3, axes4)) = subplots(2, 2, figsize=(10, 6))
     figure.suptitle(f'{hardware_type} benchmark', fontsize=16, fontweight='bold')
 
-    for host_type, metric_type in collection.items():
+    for host_type, metric in collection.items():
         axes1.plot(
             THREADS,
-            [metric_type[str(t)]['operations'] for t in THREADS],
+            [metric[str(t)]['operations'] for t in THREADS],
             's-',
-            label=f"{host_type}",
+            label=f'{host_type}',
         )
         axes2.plot(
             THREADS,
-            [metric_type[str(t)]['throughput'] for t in THREADS],
+            [metric[str(t)]['throughput'] for t in THREADS],
             'o-',
-            label=f"{host_type}",
+            label=f'{host_type}',
         )
         axes3.plot(
             THREADS,
-            [metric_type[str(t)]['efficiency'] for t in THREADS],
+            [metric[str(t)]['efficiency'] for t in THREADS],
             '^-',
-            label=f"{host_type}",
+            label=f'{host_type}',
         )
 
     axes1.set_xlabel('# of threads')

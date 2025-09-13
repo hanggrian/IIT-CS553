@@ -1,4 +1,12 @@
 #!/bin/bash
 
-# package requirements
-sudo apt-get install -y sysbench iperf tmux
+PACKAGES=('sysbench' 'iperf' 'tmux')
+
+# Ubuntu containers do not have sudo pre-installed.
+if command -v sudo &> /dev/null; then
+  sudo apt update
+  sudo apt install -y "${PACKAGES[@]}"
+else
+  apt update
+  apt install -y "${PACKAGES[@]}"
+fi
