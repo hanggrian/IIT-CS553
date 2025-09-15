@@ -93,6 +93,7 @@ graphs.
     the performance of each virtualization technologies when varying the number
     of threads.
 > - Sample command (you might need to use additional command line arguments):
+>
 >   ```sh
 >   sysbench cpu --cpu-max-prime=100000 --threads=1
 >   ```
@@ -151,10 +152,12 @@ VM | 16 | 29.20 ms | 547.35 events/sec | 99%
 > - Strong scaling studies: Fixed total data size in memory at 120GB. Then,
     measure the performance of each virtualization technologies with the
     following specifications:
+>
 >   1.  Block size: 1KB i.e., 2<sup>10</sup> to 2<sup>20</sup> bytes
 >   1.  Operations: Read
 >   1.  Access pattern: Random
 > - Sample command:
+>
 >   ```sh
 >   sysbench memory --memory-block-size=1K --memory-total-size=120G --threads=1 run
 >   ```
@@ -203,6 +206,7 @@ VM | 16 | 125829120 | 122880.00 MiB/sec | 100%
 > - Strong scaling studies: Fixed total data size on disk at 120GB. Then,
     measure the performance of each virtualization technologies with the
     following specifications:
+>
 >   1.  Number of files: 128
 >   1.  File block size: 4,096 bytes
 >   1.  File total size: 120GB
@@ -210,6 +214,7 @@ VM | 16 | 125829120 | 122880.00 MiB/sec | 100%
 >   1.  IO Mode: Synchronous
 >   1.  Extra IO flag: DirectIO
 > - Sample commands:
+>
 >   ```sh
 >   sysbench fileio --file-num=128 --file-block-size=4096 --file-total-size=120G --file-test-mode=rndrd --file-io-mode=sync --file-extra-flags=direct --threads=1 <prepare/run/cleanup>
 >   ```
@@ -260,6 +265,7 @@ VM | 16 | 1302822 | 508.84 MiB/sec | 85%
 > - Strong scaling studies using one server vs. N number of clients. Measure the
     performance of each virtualization technologies with the following
     specifications:
+>
 >   1.  Server TCP window size: 1MB
 >   1.  Client TCP write buffer size: 8192KB
 >   1.  Client TCP window size: 2.5MB
@@ -267,6 +273,7 @@ VM | 16 | 1302822 | 508.84 MiB/sec | 85%
 > - The configuration of client/server should communicate using TCP over local
     loopback.
 > - Sample commands:
+>
 >   ```sh
 >   iperf -s -w 1M
 >   iperf -c 127.0.0.1 -e -i 1 --nodelay -l 8192K --trip-times --parallel 1
