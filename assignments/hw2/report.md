@@ -36,54 +36,34 @@ graphs.
   alt="Screenshot 1"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot1.png">
 
-<style>
-  .warning-table tr {
-    color: red;
-  }
-  .warning-table td {
-    color: red;
-  }
-</style>
+All tests are performed in *Ubuntu Server 24.04* in several environments:
 
-<span style="color: red;">
-  Data from <code>benchmark_result.json</code> is currently measured in local
-  computer for testing purposes.
-  <b>
-    Replace with Chameleon Cloud later.
-  </b>
-</span>
+1.  **Bare-metal:** A Chameleon Cloud instance, as discussed in [the tutorial](https://github.com/hanggrian/IIT-CS553/blob/assets/ext2_2.pdf).
+1.  **Container:** A LXC container in LXD management.
 
-<table class="warning-table">
-  <thead>
-    <tr>
-      <th>Hardware</th>
-      <th>Model</th>
-      <th>Specifications</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>CPU</td>
-      <td>Intel Core i5-10400</td>
-      <td>2.9&ndash;4.3 GHz, 6 cores, 12 threads, 65 W</td>
-    </tr>
-    <tr>
-      <td>Memory</td>
-      <td>Corsair Vengeance LPX</td>
-      <td>4&times;8 GB, DDR4-2666, CL16</td>
-    </tr>
-    <tr>
-      <td>Disk</td>
-      <td>Samsung 970 EVO</td>
-      <td>250 GB, PCIe Gen3</td>
-    </tr>
-    <tr>
-      <td>Network</td>
-      <td>Intel I219-V</td>
-      <td>1 GbE</td>
-    </tr>
-  </tbody>
-</table>
+    ```sh
+    sudo lxd init
+    sudo lxc launch ubuntu:24.04 container
+    sudo lxc shell container
+    ```
+1.  **VM:** A QEMU/KVM virtual machine. To use the virt-install command, the ISO
+    file must be in the libvirt installation directory for permission purposes.
+
+    ```sh
+    wget https://mirror.umd.edu/ubuntu-iso/24.04.3/ubuntu-24.04.3-live-server-amd64.iso
+    sudo mv ubuntu-24.04.3-live-server-amd64.iso /var/lib/libvirt/images/ubuntu.iso
+    sudo virt-install \
+      --name vm \
+      --ram 131072 \
+      --disk size=128,bus=virtio \
+      --os-variant ubuntu24.04 \
+      --location /var/lib/libvirt/images/ubuntu.iso,kernel=casper/vmlinuz,initrd=casper/initrd \
+      --graphics none \
+      --console pty,target_type=serial \
+      --extra-args 'console=ttyS0' \
+      --noautoconsole
+    sudo virsh start vm
+    ```
 
 ## Problem 1
 
@@ -113,9 +93,9 @@ graphs.
 >   - Container: 90%
 >   - VM: 80%
 
-The container and virtual machine perform respectably well at above 93% compared
-to bare-metal in the CPU benchmark. When all 12 threads are depleted, all
-instances scored the same result with 29 ms latency.
+The container overheads are essentially the same as those of bare metal at 99%,
+while the VM is slightly lower at 98%. However, VM is consistently 1&ndash;2
+seconds slower in latency compared to others.
 
 <img
   width="320"
@@ -129,21 +109,24 @@ instances scored the same result with 29 ms latency.
 
 Virtualization type | Threads | Avg. latency | Measured throughput | Overheads
 --- | ---: | ---: | ---: | ---:
-Bare-metal | 1 | 17.26 ms | 57.94 events/sec | 95%
-Container | 1 | 16.90 ms | 59.17 events/sec | 97%
-VM | 1 | 16.51 ms | 60.57 events/sec | 100%
-Bare-metal | 2 | 18.01 ms | 111.01 events/sec | 94%
-Container | 2 | 17.10 ms | 1116.89 events/sec | 98%
-VM | 2 | 16.94 ms | 118.00 events/sec | 100%
-Bare-metal | 4 | 18.45 ms | 216.72 events/sec | 93%
-Container | 4 | 17.34 ms | 230.48 events/sec | 99%
-VM | 4 | 17.16 ms | 232.97 events/sec | 93%
-Bare-metal | 8 | 20.01 ms | 399.48 events/sec | 96%
-Container | 8 | 19.38 ms | 412.22 events/sec | 100%
-VM | 8 | 19.36 ms | 412.98 events/sec | 100%
-Bare-metal | 16 | 29.09 ms | 549.30 events/sec | 100%
-Container | 16 | 29.30 ms | 545.63 events/sec | 99%
-VM | 16 | 29.20 ms | 547.35 events/sec | 99%
+Bare-metal | 1 | 18.67 ms | 53.53 events/sec | 99%
+Container | 1 | 18.66 ms | 53.55 events/sec | 100%
+VM | 1 | 18.87 ms | 52.91 events/sec | 98%
+Bare-metal | 2 | 19.56 ms | 102.21 events/sec | 100%
+Container | 2 | 19.67 ms | 101.61 events/sec | 99%
+VM | 2 | 19.83 ms | 100.76 events/sec | 98%
+Bare-metal | 4 | 19.45 ms | 205.48 events/sec | 100%
+Container | 4 | 19.45 ms | 205.47 events/sec | 99%
+VM | 4 | 19.61 ms | 203.75 events/sec | 99%
+Bare-metal | 8 | 20.04 ms | 398.71 events/sec | 99%
+Container | 8 | 19.99 ms | 399.89 events/sec | 100%
+VM | 8 | 20.15 ms | 396.40 events/sec | 99%
+Bare-metal | 16 | 20.43 ms | 782.38 events/sec | 100%
+Container | 16 | 20.56 ms | 776.85 events/sec | 99%
+VM | 16 | 20.79 ms | 768.50 events/sec | 98%
+Bare-metal | 32 | 23.48 ms | 1360.52 events/sec | 99%
+Container | 32 | 23.47 ms | 1361.33 events/sec | 100%
+VM | 32 | 23.59 ms | 1354.59 events/sec | 99%
 
 ## Problem 2
 
@@ -167,9 +150,9 @@ VM | 16 | 29.20 ms | 547.35 events/sec | 99%
 >   Similar to efficiency example in CPU benchmark, the efficiency denotes a
     relative performance of a virtualization type vs. baremetal.
 
-VM unexpectedly scored higher than the container in the memory benchmark,
-although not by much. All instances seem to peak at 8 threads despite having a
-total of 12 available.
+VM has the lowest efficiency in the memory benchmark, as expected, although it
+does not seem to affect the total operations. In terms of efficiency, all
+instances seem to peak at 8 threads despite having a total of 32 available.
 
 <img
   width="320"
@@ -183,21 +166,24 @@ total of 12 available.
 
 Virtualization type | Threads | Total operations | Throughput | Efficiency
 --- | ---: | ---: | ---: | ---:
-Bare-metal | 1 | 26467563 | 25847.23 MiB/sec | 100%
-Container | 1 | 24445004 | 23872.07 MiB/sec | 92%
-VM | 1 | 25568001 | 24968.75 MiB/sec | 96%
-Bare-metal | 2 | 50295724 | 49116.92 MiB/sec | 100%
-Container | 2 | 47954872 | 46830.93 MiB/sec | 95%
-VM | 2 | 49304550 | 48148.97 MiB/sec | 98%
-Bare-metal | 4 | 96966142 | 94693.50 MiB/sec | 100%
-Container | 4 | 84303296 | 82327.44 MiB/sec | 86%
-VM | 4 | 86409826 | 84384.60 MiB/sec | 89%
-Bare-metal | 8 | 125829120 | 122880.00 MiB/sec | 100%
-Container | 8 | 125829120 | 122880.00 MiB/sec | 100%
-VM | 8 | 125829120 | 122880.00 MiB/sec | 100%
-Bare-metal | 16 | 125829120 | 122880.00 MiB/sec | 100%
-Container | 16 | 125829120 | 122880.00 MiB/sec | 100%
-VM | 16 | 125829120 | 122880.00 MiB/sec | 100%
+Bare-metal | 1 | 22906443 | 22369.57 ops/sec | 99%
+Container | 1 | 22936241 | 22398.67 ops/sec | 100%
+VM | 1 | 21749419 | 21239.67 ops/sec | 94%
+Bare-metal | 2 | 44027063 | 42995.18 ops/sec | 100%
+Container | 2 | 39730396 | 38799.21 ops/sec | 90%
+VM | 2 | 38151830 | 37257.65 ops/sec | 86%
+Bare-metal | 4 | 77378502 | 75564.94 ops/sec | 100%
+Container | 4 | 77242347 | 75431.98 ops/sec | 99%
+VM | 4 | 73990094 | 72255.95 ops/sec | 95%
+Bare-metal | 8 | 125829120 | 122880.00 ops/sec | 100%
+Container | 8 | 125829120 | 122880.00 ops/sec | 100%
+VM | 8 | 125829120 | 122880.00 ops/sec | 100%
+Bare-metal | 16 | 125829120 | 122880.00 ops/sec | 100%
+Container | 16 | 125829120 | 122880.00 ops/sec | 100%
+VM | 16 | 125829120 | 122880.00 ops/sec | 100%
+Bare-metal | 32 | 125829120 | 122880.00 ops/sec | 100%
+Container | 32 | 125829120 | 122880.00 ops/sec | 100%
+VM | 32 | 125829120 | 122880.00 ops/sec | 100%
 
 ## Problem 3
 
@@ -226,7 +212,7 @@ VM | 16 | 125829120 | 122880.00 MiB/sec | 100%
 
 For some unknown reasons, bare-metal has the lowest score in the disk benchmark
 by less than half of the operations compared to the container. It is possible
-that Docker has implemented a mechanism to improve disk read speed in
+that LXC/LXD has implemented a mechanism to improve disk read speed in
 containers. However, having tried multiple Linux distribution images, I still
 could not explain why VMs perform better than bare-metal.
 
@@ -242,21 +228,24 @@ could not explain why VMs perform better than bare-metal.
 
 Virtualization type | Threads | Total operations | Throughput | Efficiency
 --- | ---: | ---: | ---: | ---:
-Bare-metal | 1 | 177022 | 69.14 MiB/sec | 45%
-Container | 1 | 392587 | 153.34 MiB/sec | 100%
-VM | 1 | 265197 | 103.58 MiB/sec | 67%
-Bare-metal | 2 | 343117 | 134.01 MiB/sec | 39%
-Container | 2 | 863804 | 337.38 MiB/sec | 100%
-VM | 2 | 544401 | 212.63 MiB/sec | 63%
-Bare-metal | 4 | 447353 | 174.72 MiB/sec | 32%
-Container | 4 | 1361300 | 531.69 MiB/sec | 100%
-VM | 4 | 930227 | 363.32 MiB/sec | 68%
-Bare-metal | 8 | 731577 | 285.74 MiB/sec | 46%
-Container | 8 | 1569443 | 612.98 MiB/sec | 100%
-VM | 8 | 1268565 | 495.47 MiB/sec | 80%
-Bare-metal | 16 | 1067485 | 416.92 MiB/sec | 70%
-Container | 16 | 1520467 | 593.85 MiB/sec | 100%
-VM | 16 | 1302822 | 508.84 MiB/sec | 85%
+Bare-metal | 1 | 93354 | 36.45 ops/sec | 20%
+Container | 1 | 454448 | 177.42 ops/sec | 100%
+VM | 1 | 133847 | 52.24 ops/sec | 29%
+Bare-metal | 2 | 170568 | 66.59 ops/sec | 19%
+Container | 2 | 876696 | 342.27 ops/sec | 100%
+VM | 2 | 276151 | 107.80 ops/sec | 31%
+Bare-metal | 4 | 322679 | 125.98 ops/sec | 21%
+Container | 4 | 1503781 | 587.10 ops/sec | 100%
+VM | 4 | 546511 | 213.29 ops/sec | 36%
+Bare-metal | 8 | 531908 | 207.66 ops/sec | 18%
+Container | 8 | 2874140 | 1122.52 ops/sec | 100%
+VM | 8 | 763809 | 298.17 ops/sec | 26%
+Bare-metal | 16 | 676642 | 264.26 ops/sec | 14%
+Container | 16 | 4569054 | 1784.47 ops/sec | 100%
+VM | 16 | 872563 | 340.69 ops/sec | 19%
+Bare-metal | 32 | 851575 | 332.58 ops/sec | 15%
+Container | 32 | 5384094 | 2102.76 ops/sec | 100%
+VM | 32 | 738303 | 288.20 ops/sec | 13%
 
 ## Problem 4
 
@@ -306,18 +295,21 @@ is the worst.
 
 Virtualization type | Threads | Total operations | Measured throughput | Efficiency
 --- | ---: | ---: | ---: | ---:
-Bare-metal | 1 | 69.7 | 59.8 Gbits/sec | 79%
-Container | 1 | 87.8 | 75.4 Gbits/sec | 100%
-VM | 1 | 62.1 | 53.3 Gbits/sec | 70%
-Bare-metal | 2 | 124 | 107 Gbits/sec | 88%
-Container | 2 | 140 | 120 Gbits/sec | 100%
-VM | 2 | 106 | 90.7 Gbits/sec | 75%
-Bare-metal | 4 | 190 | 163 Gbits/sec | 92%
-Container | 4 | 206 | 176 Gbits/sec | 100%
-VM | 4 | 150 | 129 Gbits/sec | 72%
-Bare-metal | 8 | 228 | 196 Gbits/sec | 95%
-Container | 8 | 240 | 206 Gbits/sec | 100%
-VM | 8 | 180 | 154 Gbits/sec | 75%
-Bare-metal | 16 | 200 | 172 Gbits/sec | 98%
-Container | 16 | 203 | 174 Gbits/sec | 100%
-VM | 16 | 205 | 175 Gbits/sec | 86%
+Bare-metal | 1 | 34.4 | 29.5 ops/sec | 89%
+Container | 1 | 38.3 | 33.3 ops/sec | 100%
+VM | 1 | 34.0 | 29.2 ops/sec | 88%
+Bare-metal | 2 | 65.3 | 56.0 ops/sec | 90%
+Container | 2 | 72.4 | 62.1 ops/sec | 100%
+VM | 2 | 50.9 | 43.6 ops/sec | 70%
+Bare-metal | 4 | 119 | 102 ops/sec | 90%
+Container | 4 | 132 | 113 ops/sec | 100%
+VM | 4 | 89.8 | 76.9 ops/sec | 68%
+Bare-metal | 8 | 212 | 182 ops/sec | 95%
+Container | 8 | 221 | 190 ops/sec | 100%
+VM | 8 | 166 | 142 ops/sec | 74%
+Bare-metal | 16 | 313 | 268 ops/sec | 100%
+Container | 16 | 298 | 255 ops/sec | 95%
+VM | 16 | 270 | 231 ops/sec | 86%
+Bare-metal | 32 | 395 | 339 ops/sec | 100%
+Container | 32 | 379 | 324 ops/sec | 95%
+VM | 32 | 324 | 278 ops/sec | 82%

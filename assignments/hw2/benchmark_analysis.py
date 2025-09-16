@@ -13,7 +13,7 @@ GREEN = '\033[92m'
 YELLOW = '\033[93m'
 
 RESULT_FILE = 'benchmark_result.json'
-THREADS = [1, 2, 4, 8, 16]
+THREADS = [1, 2, 4, 8, 16, 32]
 
 
 def warn(message: str) -> None:

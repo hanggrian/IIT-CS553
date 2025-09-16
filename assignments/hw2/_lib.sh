@@ -6,7 +6,7 @@ readonly RED='[91m'
 readonly GREEN='[92m'
 readonly YELLOW='[93m'
 
-readonly THREAD_COUNTS=(1 2 4 8 16)
+readonly THREAD_COUNTS=(1 2 4 8 16 32)
 
 warn() { echo "$YELLOW$*$END"; } >&2
 
