@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from os import remove
 from os.path import exists, splitext
 from subprocess import run, CalledProcessError
@@ -87,8 +85,8 @@ if __name__ == '__main__':
 
     if max(SCALES) / min(SCALES) > 50:
         xscale('log')
-    if (max(max(generation_times), max(sorting_times)) /
-        min(min(generation_times), min(sorting_times)) > 10):
+    if max(max(generation_times), max(sorting_times)) / \
+        min(min(generation_times), min(sorting_times)) > 10:
         yscale('log')
 
     tight_layout()

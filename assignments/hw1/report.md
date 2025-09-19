@@ -619,14 +619,14 @@ is a Matplotlib graph that visualizes the performance comparison between
 generating and sorting the dataset.
 
 <img
-  width="640"
+  width="320"
   alt="Screenshot 3.3"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot3_3.png">
 
 <img
-  width="320"
-  alt="Screenshot 3.4"
-  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot3_4.png">
+  width="640"
+  alt="Figure 1"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/figure1.png">
 
 ## Problem 4
 

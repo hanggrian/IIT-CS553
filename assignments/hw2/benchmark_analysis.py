@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from json import load
 from os.path import exists
 from sys import exit, stderr
@@ -45,7 +43,7 @@ def latency_graph(
     print(f'Generating {hardware_type} graph...')
 
     figure, ((axes1, axes2), (axes3, axes4)) = subplots(2, 2, figsize=(10, 6))
-    figure.suptitle(f'{hardware_type} benchmark', fontsize=16, fontweight='bold')
+    figure.suptitle(f'{hardware_type} benchmark', fontweight='bold')
 
     for host_type, metric in collection.items():
         axes1.plot(
@@ -102,7 +100,7 @@ def operations_graph(
     print(f'Generating {hardware_type} graph...')
 
     figure, ((axes1, axes2), (axes3, axes4)) = subplots(2, 2, figsize=(10, 6))
-    figure.suptitle(f'{hardware_type} benchmark', fontsize=16, fontweight='bold')
+    figure.suptitle(f'{hardware_type} benchmark', fontweight='bold')
 
     for host_type, metric in collection.items():
         axes1.plot(

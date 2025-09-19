@@ -24,7 +24,15 @@
   number of threads. You must incorporate bash scripting for: environment
   (baremetal/container/VM) orchestration, run benchmark and Python to analyze
   the results and plotting.
-
+>
+> **Commands you can use to install tools on Ubuntu 24.04 (and
+  documentations):**
+>
+> - [sysbench](https://manpages.ubuntu.com/manpages/jammy/man1/sysbench.1.html):
+    `sudo apt install sysbench`
+> - [iPerf](https://manpages.ubuntu.com/manpages/jammy/man1/iperf.1.html):
+    `sudo apt install iperf`
+    
 Each benchmark script produces a text file that reports the running performance,
 which, in this instance, is for strong scaling studies. Once the benchmarks are
 complete, the values from the text files are manually collected into
@@ -99,13 +107,13 @@ seconds slower in latency compared to others.
 
 <img
   width="320"
-  alt="Screenshot 2.1"
-  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot2_1.png">
+  alt="Screenshot 2"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot2.png">
 
 <img
   width="640"
-  alt="Screenshot 2.2"
-  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot2_2.png">
+  alt="Figure 1"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/figure1.png">
 
 Virtualization type | Threads | Avg. latency | Measured throughput | Overheads
 --- | ---: | ---: | ---: | ---:
@@ -156,13 +164,13 @@ instances seem to peak at 8 threads despite having a total of 32 available.
 
 <img
   width="320"
-  alt="Screenshot 3.1"
-  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot3_1.png">
+  alt="Screenshot 3"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot3.png">
 
 <img
   width="640"
-  alt="Screenshot 3.2"
-  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot3_2.png">
+  alt="Figure 2"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/figure2.png">
 
 Virtualization type | Threads | Total operations | Throughput | Efficiency
 --- | ---: | ---: | ---: | ---:
@@ -218,13 +226,13 @@ could not explain why VMs perform better than bare-metal.
 
 <img
   width="320"
-  alt="Screenshot 4.1"
-  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot4_1.png">
+  alt="Screenshot 4"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot4.png">
 
 <img
   width="640"
-  alt="Screenshot 4.2"
-  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot4_2.png">
+  alt="Figure 3"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/figure3.png">
 
 Virtualization type | Threads | Total operations | Throughput | Efficiency
 --- | ---: | ---: | ---: | ---:
@@ -290,8 +298,8 @@ is the worst.
 
 <img
   width="640"
-  alt="Screenshot 5.3"
-  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot5_3.png">
+  alt="Figure 4"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/figure4.png">
 
 Virtualization type | Threads | Total operations | Measured throughput | Efficiency
 --- | ---: | ---: | ---: | ---:
