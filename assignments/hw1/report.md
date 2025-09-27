@@ -28,7 +28,7 @@ integrated with a GNOME desktop with [libvirt](https://wiki.archlinux.org/title/
 and QEMU.
 
 <img
-  width="480"
+  width="480px"
   alt="Screenshot 1.1"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot1_1.png">
 
@@ -39,7 +39,7 @@ been told that this setting is also found on [virt-manager](https://wiki.archlin
 GUI. However, in my test, it was only successfully done with `virsh` command.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 1.2"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot1_2.png">
 
@@ -49,12 +49,12 @@ GUI. However, in my test, it was only successfully done with `virsh` command.
 Here are the selected settings when the VM is installed through live boot media.
 
 <img
-  width="480"
+  width="480px"
   alt="Screenshot 1.3"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot1_3.png">
 
 <img
-  width="480"
+  width="480px"
   alt="Screenshot 1.4"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot1_4.png">
 
@@ -73,7 +73,7 @@ on installation. Both services are enabled after a fresh install and remote
 login is successfully tested. This process is documented on `setup.sh`.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 1.5"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot1_5.png">
 
@@ -90,7 +90,7 @@ login is successfully tested. This process is documented on `setup.sh`.
 server destination.iperf -s -w $SERVER_WINDOW_SIZE
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.1"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_1.png">
 
@@ -99,7 +99,7 @@ server destination.iperf -s -w $SERVER_WINDOW_SIZE
 `ssh-keygen` generates private and public keys used in SSH logins.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.2"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_2.png">
 
@@ -108,7 +108,7 @@ server destination.iperf -s -w $SERVER_WINDOW_SIZE
 `scp` copies a source file into a destination directory.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.3"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_3.png">
 
@@ -117,7 +117,7 @@ server destination.iperf -s -w $SERVER_WINDOW_SIZE
 `history` prints the recently used commands in my terminal.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.4"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_4.png">
 
@@ -126,7 +126,7 @@ server destination.iperf -s -w $SERVER_WINDOW_SIZE
 `sudo` is a prefix for commands that execute with a superuser privilege.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.5"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_5.png">
 
@@ -135,7 +135,7 @@ server destination.iperf -s -w $SERVER_WINDOW_SIZE
 `ip` shows details related to networking, like IP and MAC address.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.6"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_6.png">
 
@@ -145,7 +145,7 @@ To the best of my knowledge, `dd` writes the content of input files into bit
 values that can be read as a disk device.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.7"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_7.png">
 
@@ -154,7 +154,7 @@ values that can be read as a disk device.
 `fdisk` is an interactive shell to configure partition of a disk.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.8"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_8.png">
 
@@ -163,7 +163,7 @@ values that can be read as a disk device.
 `apt` is the Debian package manager.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.9"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_9.png">
 
@@ -172,7 +172,7 @@ values that can be read as a disk device.
 `vi` is a command-line text editor.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.10"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_10.png">
 
@@ -181,7 +181,7 @@ values that can be read as a disk device.
 `time` measures the execution duration of other commands.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.11"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_11.png">
 
@@ -190,7 +190,7 @@ values that can be read as a disk device.
 `tar` archives a set of files, that is, compressing them into a single file.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.12"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_12.png">
 
@@ -199,7 +199,7 @@ values that can be read as a disk device.
 `cat` prints the content of a text file.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.13"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_13.png">
 
@@ -208,7 +208,7 @@ values that can be read as a disk device.
 `watch` keeps monitoring a certain command until completion.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.14"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_14.png">
 
@@ -217,7 +217,7 @@ values that can be read as a disk device.
 `ps` lists all commands started by a user.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.15"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_15.png">
 
@@ -226,7 +226,7 @@ values that can be read as a disk device.
 `top` is a command-line task manager, providing a live feed to system resources.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.16"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_16.png">
 
@@ -236,7 +236,7 @@ values that can be read as a disk device.
 console.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.17"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_17.png">
 
@@ -245,7 +245,7 @@ console.
 `gcc` compiles C source code into executables.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.18"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_18.png">
 
@@ -254,7 +254,7 @@ console.
 `tail` obtains the last section of a text file.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.19"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_19.png">
 
@@ -263,7 +263,7 @@ console.
 `grep` finds text lines that match the input pattern.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.20"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_20.png">
 
@@ -272,7 +272,7 @@ console.
 `kill` terminates a program given its process ID.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.21"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_21.png">
 
@@ -281,7 +281,7 @@ console.
 `killall` terminates all programs given their process name.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.22"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_22.png">
 
@@ -290,7 +290,7 @@ console.
 `du` calculates the disk usage of a directory.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.23"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_23.png">
 
@@ -299,7 +299,7 @@ console.
 `df` estimates the remaining disk usage of each filesystem.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.24"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_24.png">
 
@@ -309,7 +309,7 @@ console.
 all jobs are finished.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.25"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_25.png">
 
@@ -318,7 +318,7 @@ all jobs are finished.
 `vim` is an improved version of vi with more macros.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.26"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_26.png">
 
@@ -328,7 +328,7 @@ all jobs are finished.
 or executed.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.27"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_27.png">
 
@@ -337,7 +337,7 @@ or executed.
 `chown` picks a new owner of a file.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.28"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_28.png">
 
@@ -346,7 +346,7 @@ or executed.
 `useradd` registers a new user account for this system.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.29"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_29.png">
 
@@ -355,7 +355,7 @@ or executed.
 `man` shows the tutorial on how to use a command.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.30"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_30.png">
 
@@ -364,7 +364,7 @@ or executed.
 `locate` searches certain files in pre-determined locations.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.31"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_31.png">
 
@@ -373,7 +373,7 @@ or executed.
 `find` lists all files whose name matches the input pattern.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.32"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_32.png">
 
@@ -383,7 +383,7 @@ or executed.
 text.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.33"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_33.png">
 
@@ -393,7 +393,7 @@ text.
 understand.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.34"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_34.png">
 
@@ -402,7 +402,7 @@ understand.
 `diff` highlights the difference between two text files.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.35"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_35.png">
 
@@ -411,7 +411,7 @@ understand.
 `sort` rearranges the index of each text line based on its comparable content.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.36"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_36.png">
 
@@ -420,7 +420,7 @@ understand.
 `export` allows a variable to be used by other processes.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.37"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_37.png">
 
@@ -429,7 +429,7 @@ understand.
 `pwd` locates the current working directory and prints its path.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.38"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_38.png">
 
@@ -439,7 +439,7 @@ understand.
 scheduled to execute at a specified time.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.39"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_39.png">
 
@@ -448,7 +448,7 @@ scheduled to execute at a specified time.
 `mount` plugs in a disk image (or device) into a given directory path.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.40"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_40.png">
 
@@ -457,7 +457,7 @@ scheduled to execute at a specified time.
 `passwd` modifies the password of a user, or self if no user is specified.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.41"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_41.png">
 
@@ -466,7 +466,7 @@ scheduled to execute at a specified time.
 `uname` shows the system’s Linux version and distribution.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.42"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_42.png">
 
@@ -475,7 +475,7 @@ scheduled to execute at a specified time.
 `whereis` locates the installation path of a package.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.43"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_43.png">
 
@@ -484,7 +484,7 @@ scheduled to execute at a specified time.
 `whatis` explains the description of a package.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.44"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_44.png">
 
@@ -494,7 +494,7 @@ scheduled to execute at a specified time.
 is not standard in Debian because the root user is not configured by default.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.45"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_45.png">
 
@@ -503,7 +503,7 @@ is not standard in Debian because the root user is not configured by default.
 `ping` tests network availability by sending packets to the destination address.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.46"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_46.png">
 
@@ -513,7 +513,7 @@ is not standard in Debian because the root user is not configured by default.
 source to destination.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.47"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_47.png">
 
@@ -523,14 +523,14 @@ source to destination.
 left unconfigured.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.48"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_48.png">
 
 > 49. time
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.49"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_49.png">
 
@@ -539,7 +539,7 @@ left unconfigured.
 `wget` downloads files from the web. It can also be used to download a webpage.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.50"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_50.png">
 
@@ -548,7 +548,7 @@ left unconfigured.
 `wc` counts the number of words and text lines.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.51"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_51.png">
 
@@ -557,7 +557,7 @@ left unconfigured.
 `pwgen` generates a set of random passwords.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2.52"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot2_52.png">
 
@@ -584,7 +584,7 @@ triggering a waiting period to make sure that the script takes at least 10
 seconds.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 3.1"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot3_1.png">
 
@@ -600,7 +600,7 @@ The generated output file name is suffixed with _sorted while still taking
 account of the file extension.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 3.2"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot3_2.png">
 
@@ -619,12 +619,12 @@ is a Matplotlib graph that visualizes the performance comparison between
 generating and sorting the dataset.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 3.3"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/screenshot3_3.png">
 
 <img
-  width="640"
+  width="640px"
   alt="Figure 1"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/figure1.png">
 
@@ -748,10 +748,10 @@ price section is the MSRP listed on official websites instead of street value.
 
   Class | Model | Speed | Cores | TDP | Price
   --- | --- | --- | --- | --- | ---
-  Mobile | Core Ultra 9 285HX | 2.1&ndash;5.5GHz | 16 cores, 24 threads | 55&ndash;160 W | OEM
-  Desktop | Core Ultra 9 285K | 3.2&ndash;5.7GHz | 24 cores, 36 threads | 125&ndash;250 W | $599
-  Workstation | Xeon w9-3495X | 1.9&ndash;4.8GHz | 56 cores, 112 threads | 350&ndash;420 W | $5,889
-  Server | Xeon Max 9480 | 1.9&ndash;3.5GHz | 56 cores, 112 threads | 350 W | $12,980
+  Mobile | Core Ultra 9 285HX | 2.1&ndash;5.5GHz | 16 cores, 24 threads | 55&ndash;160W | OEM
+  Desktop | Core Ultra 9 285K | 3.2&ndash;5.7GHz | 24 cores, 36 threads | 125&ndash;250W | $599
+  Workstation | Xeon w9-3495X | 1.9&ndash;4.8GHz | 56 cores, 112 threads | 350&ndash;420W | $5,889
+  Server | Xeon Max 9480 | 1.9&ndash;3.5GHz | 56 cores, 112 threads | 350W | $12,980
 - AMD CPU (x86)
 
   Higher-end AMD CPUs are divided into more than one physical die, known as CCD.
@@ -759,10 +759,10 @@ price section is the MSRP listed on official websites instead of street value.
 
   Class | Model | Speed | Cores | TDP | Price
   --- | --- | --- | --- | --- | ---
-  Mobile | Ryzen AI 9 HX 375 | 3.3&ndash;5.1GHz | 12 cores, 24 threads | 15&ndash;54 W | OEM
-  Desktop | Ryzen 9 9950X3D | 4.2&ndash;5.7GHz | 16 cores, 32 threads | 170 W | $699
-  Workstation | Ryzen Threadripper 9980X | 3.2&ndash;5.4GHz | 64 cores, 128 threads | 350 W | $4,999
-  Server | EPYC 9965 | 2.25&ndash;3.7GHz | 192 cores, 384 threads | 500 W | $14,813
+  Mobile | Ryzen AI 9 HX 375 | 3.3&ndash;5.1GHz | 12 cores, 24 threads | 15&ndash;54W | OEM
+  Desktop | Ryzen 9 9950X3D | 4.2&ndash;5.7GHz | 16 cores, 32 threads | 170W | $699
+  Workstation | Ryzen Threadripper 9980X | 3.2&ndash;5.4GHz | 64 cores, 128 threads | 350W | $4,999
+  Server | EPYC 9965 | 2.25&ndash;3.7GHz | 192 cores, 384 threads | 500W | $14,813
 - IBM CPU (Power9)
 
   The IBM enterprise motherboard supports multiple CPUs, and each CPU may have a
@@ -770,22 +770,22 @@ price section is the MSRP listed on official websites instead of street value.
 
   Class | Model | Speed | Cores | TDP | Price
   --- | --- | --- | --- | --- | ---
-  Server | Power System E980 | 3.55&ndash;4GHz | 12 cores, 96 threads | 240 W | $1,291 @month
+  Server | Power System E980 | 3.55&ndash;4GHz | 12 cores, 96 threads | 240W | $1,291 @month
 - ThunderX CPU (ARM)
 
   Multithreading is not available in ARM CPUs.
 
   Class | Model | Speed | Cores | TDP | Price
   --- | --- | --- | --- | --- | ---
-  Server | CN8890 | 1.9GHz | 48 cores, 48 threads | 575 W | $1,999
+  Server | CN8890 | 1.9GHz | 48 cores, 48 threads | 575W | $1,999
 - NVIDIA GPU
 
   Class | Model | Speed | VRAM | TDP | Price
   --- | --- | --- | --- | --- | ---
-  Mobile | RTX 5090 Laptop | 1.59&ndash;2.16GHz | 24GB | 95&ndash;150 W | OEM
-  Desktop | RTX 5090 | 2.01&ndash;2.41GHz | 32GB | 500 W | $1,999
-  Workstation | RTX PRO 6000 | 1.59&ndash;2.28GHz | 96GB | 600 W | $8,565
-  Server | B100 | 1.66&ndash;1.83GHz | 192GB | 700 W | $11,025
+  Mobile | RTX 5090 Laptop | 1.59&ndash;2.16GHz | 24GB | 95&ndash;150W | OEM
+  Desktop | RTX 5090 | 2.01&ndash;2.41GHz | 32GB | 500W | $1,999
+  Workstation | RTX PRO 6000 | 1.59&ndash;2.28GHz | 96GB | 600W | $8,565
+  Server | B100 | 1.66&ndash;1.83GHz | 192GB | 700W | $11,025
 
 > 3.  Why do we not have processors running at 1THz today (as might have been
       predicted in the year 2000)?

@@ -32,7 +32,7 @@
     `sudo apt install sysbench`
 > - [iPerf](https://manpages.ubuntu.com/manpages/jammy/man1/iperf.1.html):
     `sudo apt install iperf`
-    
+
 Each benchmark script produces a text file that reports the running performance,
 which, in this instance, is for strong scaling studies. Once the benchmarks are
 complete, the values from the text files are manually collected into
@@ -40,7 +40,7 @@ complete, the values from the text files are manually collected into
 graphs.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 1"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot1.png">
 
@@ -106,12 +106,12 @@ while the VM is slightly lower at 98%. However, VM is consistently 1&ndash;2
 seconds slower in latency compared to others.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 2"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot2.png">
 
 <img
-  width="640"
+  width="640px"
   alt="Figure 1"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/figure1.png">
 
@@ -132,9 +132,9 @@ VM | 8 | 20.15 ms | 396.40 events/sec | 99%
 Bare-metal | 16 | 20.43 ms | 782.38 events/sec | 100%
 Container | 16 | 20.56 ms | 776.85 events/sec | 99%
 VM | 16 | 20.79 ms | 768.50 events/sec | 98%
-Bare-metal | 32 | 23.48 ms | 1360.52 events/sec | 99%
-Container | 32 | 23.47 ms | 1361.33 events/sec | 100%
-VM | 32 | 23.59 ms | 1354.59 events/sec | 99%
+Bare-metal | 32 | 23.48 ms | 1,360.52 events/sec | 99%
+Container | 32 | 23.47 ms | 1,361.33 events/sec | 100%
+VM | 32 | 23.59 ms | 1,354.59 events/sec | 99%
 
 ## Problem 2
 
@@ -163,35 +163,35 @@ does not seem to affect the total operations. In terms of efficiency, all
 instances seem to peak at 8 threads despite having a total of 32 available.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 3"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot3.png">
 
 <img
-  width="640"
+  width="640px"
   alt="Figure 2"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/figure2.png">
 
 Virtualization type | Threads | Total operations | Throughput | Efficiency
 --- | ---: | ---: | ---: | ---:
-Bare-metal | 1 | 22906443 | 22369.57 ops/sec | 99%
-Container | 1 | 22936241 | 22398.67 ops/sec | 100%
-VM | 1 | 21749419 | 21239.67 ops/sec | 94%
-Bare-metal | 2 | 44027063 | 42995.18 ops/sec | 100%
-Container | 2 | 39730396 | 38799.21 ops/sec | 90%
-VM | 2 | 38151830 | 37257.65 ops/sec | 86%
-Bare-metal | 4 | 77378502 | 75564.94 ops/sec | 100%
-Container | 4 | 77242347 | 75431.98 ops/sec | 99%
-VM | 4 | 73990094 | 72255.95 ops/sec | 95%
-Bare-metal | 8 | 125829120 | 122880.00 ops/sec | 100%
-Container | 8 | 125829120 | 122880.00 ops/sec | 100%
-VM | 8 | 125829120 | 122880.00 ops/sec | 100%
-Bare-metal | 16 | 125829120 | 122880.00 ops/sec | 100%
-Container | 16 | 125829120 | 122880.00 ops/sec | 100%
-VM | 16 | 125829120 | 122880.00 ops/sec | 100%
-Bare-metal | 32 | 125829120 | 122880.00 ops/sec | 100%
-Container | 32 | 125829120 | 122880.00 ops/sec | 100%
-VM | 32 | 125829120 | 122880.00 ops/sec | 100%
+Bare-metal | 1 | 22,906,443 | 22,369.57 ops/sec | 99%
+Container | 1 | 22,936,241 | 22,398.67 ops/sec | 100%
+VM | 1 | 21,749,419 | 21,239.67 ops/sec | 94%
+Bare-metal | 2 | 44,027,063 | 42,995.18 ops/sec | 100%
+Container | 2 | 39,730,396 | 38,799.21 ops/sec | 90%
+VM | 2 | 38,151,830 | 37,257.65 ops/sec | 86%
+Bare-metal | 4 | 77,378,502 | 75,564.94 ops/sec | 100%
+Container | 4 | 77,242,347 | 75,431.98 ops/sec | 99%
+VM | 4 | 73,990,094 | 72,255.95 ops/sec | 95%
+Bare-metal | 8 | 125,829,120 | 122,880.00 ops/sec | 100%
+Container | 8 | 125,829,120 | 122,880.00 ops/sec | 100%
+VM | 8 | 125,829,120 | 122,880.00 ops/sec | 100%
+Bare-metal | 16 | 125,829,120 | 122,880.00 ops/sec | 100%
+Container | 16 | 125,829,120 | 122,880.00 ops/sec | 100%
+VM | 16 | 125,829,120 | 122,880.00 ops/sec | 100%
+Bare-metal | 32 | 125,829,120 | 122,880.00 ops/sec | 100%
+Container | 32 | 125,829,120 | 122,880.00 ops/sec | 100%
+VM | 32 | 125,829,120 | 122,880.00 ops/sec | 100%
 
 ## Problem 3
 
@@ -225,35 +225,35 @@ containers. However, having tried multiple Linux distribution images, I still
 could not explain why VMs perform better than bare-metal.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 4"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot4.png">
 
 <img
-  width="640"
+  width="640px"
   alt="Figure 3"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/figure3.png">
 
 Virtualization type | Threads | Total operations | Throughput | Efficiency
 --- | ---: | ---: | ---: | ---:
-Bare-metal | 1 | 93354 | 36.45 ops/sec | 20%
-Container | 1 | 454448 | 177.42 ops/sec | 100%
-VM | 1 | 133847 | 52.24 ops/sec | 29%
-Bare-metal | 2 | 170568 | 66.59 ops/sec | 19%
-Container | 2 | 876696 | 342.27 ops/sec | 100%
-VM | 2 | 276151 | 107.80 ops/sec | 31%
-Bare-metal | 4 | 322679 | 125.98 ops/sec | 21%
-Container | 4 | 1503781 | 587.10 ops/sec | 100%
-VM | 4 | 546511 | 213.29 ops/sec | 36%
-Bare-metal | 8 | 531908 | 207.66 ops/sec | 18%
-Container | 8 | 2874140 | 1122.52 ops/sec | 100%
-VM | 8 | 763809 | 298.17 ops/sec | 26%
-Bare-metal | 16 | 676642 | 264.26 ops/sec | 14%
-Container | 16 | 4569054 | 1784.47 ops/sec | 100%
-VM | 16 | 872563 | 340.69 ops/sec | 19%
-Bare-metal | 32 | 851575 | 332.58 ops/sec | 15%
-Container | 32 | 5384094 | 2102.76 ops/sec | 100%
-VM | 32 | 738303 | 288.20 ops/sec | 13%
+Bare-metal | 1 | 93,354 | 36.45 ops/sec | 20%
+Container | 1 | 454,448 | 177.42 ops/sec | 100%
+VM | 1 | 133,847 | 52.24 ops/sec | 29%
+Bare-metal | 2 | 170,568 | 66.59 ops/sec | 19%
+Container | 2 | 876,696 | 342.27 ops/sec | 100%
+VM | 2 | 276,151 | 107.80 ops/sec | 31%
+Bare-metal | 4 | 322,679 | 125.98 ops/sec | 21%
+Container | 4 | 1,503,781 | 587.10 ops/sec | 100%
+VM | 4 | 546,511 | 213.29 ops/sec | 36%
+Bare-metal | 8 | 531,908 | 207.66 ops/sec | 18%
+Container | 8 | 2,874,140 | 1,122.52 ops/sec | 100%
+VM | 8 | 763,809 | 298.17 ops/sec | 26%
+Bare-metal | 16 | 676,642 | 264.26 ops/sec | 14%
+Container | 16 | 4,569,054 | 1,784.47 ops/sec | 100%
+VM | 16 | 872,563 | 340.69 ops/sec | 19%
+Bare-metal | 32 | 851,575 | 332.58 ops/sec | 15%
+Container | 32 | 5,384,094 | 2,102.76 ops/sec | 100%
+VM | 32 | 738,303 | 288.20 ops/sec | 13%
 
 ## Problem 4
 
@@ -287,17 +287,17 @@ the results. The bare-metal performance is comparable to the container while VM
 is the worst.
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 5.1"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot5_1.png">
 
 <img
-  width="320"
+  width="320px"
   alt="Screenshot 5.2"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/screenshot5_2.png">
 
 <img
-  width="640"
+  width="640px"
   alt="Figure 4"
   src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/figure4.png">
 
