@@ -48,12 +48,6 @@ All tests are performed in *Ubuntu Server 24.04* in several environments:
 
 1.  **Bare-metal:** A Chameleon Cloud instance, as discussed in [the tutorial](https://github.com/hanggrian/IIT-CS553/blob/assets/ext2_2.pdf).
 1.  **Container:** A LXC container in LXD management.
-
-    ```sh
-    sudo lxd init
-    sudo lxc launch ubuntu:24.04 container
-    sudo lxc shell container
-    ```
 1.  **VM:** A QEMU/KVM virtual machine. To use the virt-install command, the ISO
     file must be in the libvirt installation directory for permission purposes.
 

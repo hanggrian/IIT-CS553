@@ -25,3 +25,13 @@ require() {
     die "For usage information, run with the help flag '-h'."
   fi
 }
+
+install() {
+  if command -v sudo &> /dev/null; then
+    sudo apt update
+    sudo apt install -y "$@"
+  else
+    apt update
+    apt install -y "$@"
+  fi
+}

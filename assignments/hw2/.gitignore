@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+._*
+
+# PyCharm
+*.iml
+.idea/
+.venv/
+.pytest_cache/
+__pycache__/
+*.egg-info/
+.coverage
+dist/
