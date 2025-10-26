@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+._*
+
+# CLion
+*.iml
+.idea/
+build/
+cmake-build-debug/
+
+# PyCharm
+.venv/
+.pytest_cache/
+__pycache__/
+*.egg-info/
+.coverage
+dist/

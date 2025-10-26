@@ -17,9 +17,7 @@
   for your development and evaluation. The performance evaluation should be done
   on Chameleon on Ubuntu Linux 24.03. You will make use of a hashing algorithm:
 >
-> - Blake3:
->   - [Repo](https://github.com/BLAKE3-team/BLAKE3)
->   - [Paper](https://github.com/BLAKE3-team/BLAKE3-specs/blob/master/blake3.pdf)
+> [View Blake3 repo][Blake3] / [paper](https://github.com/BLAKE3-team/BLAKE3-specs/blob/master/blake3.pdf)
 >
 > Your benchmark will use a 6-byte NONCE to generate $2^{26}$ (SMALL) or
   $2^{32}$ (LARGE) BLAKE3 hashes of 10-bytes long each and store them in a file
@@ -43,7 +41,7 @@
   write the data in ASCII. You are to parallelize your various stages (hash
   generation, sort, and disk write) with a pool of threads per stage, that can
   be controlled separately.
-
+>
 > Here are the command line arguments your program should have:
 >
 > ```
@@ -74,7 +72,21 @@
 > cc@hw4-raicu-skylake:~/vault$ ./vaultx -t 24 -i 1 -m 256 -k 26 -g memo.t -f
 > k26-memo.x -d false vaultx t24 i1 m256 k26 6.82 104.02 9.844270
 > ```
->
+
+This project uses C++ 23 standard, [Boost libraries](https://www.boost.org/),
+[OpenMP interface](https://www.openmp.org/) and [Blake3] pulled from the GitHub
+repository. Run `./build.sh` to generate the executable with CMake commands. GCC
+version 14 or higher is required to compile the project, run `./setup.sh` to
+automate this process.
+
+The help command is implemented using [Boost Program Options](https://www.boost.org/doc/libs/latest/doc/html/program_options.html) library. It helps capture flags, parse boolean switches
+and format the help message.
+
+<img
+  width="320px"
+  alt="Screenshot 1"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/screenshot1.png">
+
 > You should be able to verify that the data you are writing is correct.
 >
 > ```
@@ -99,7 +111,31 @@
 > ⋮
 > [304] stored: BLANK nonce: BLANK
 > ```
->
+
+The hash generation stage divides the nonce into smaller chunks and processes
+each chunk in parallel using a thread pool by default, or OpenMP parallelization
+when the `-a task` flag is set. The chunks, stored in memory buffers, are then
+sorted using parallel sort with the [Boost Sort](https://www.boost.org/doc/libs/latest/libs/sort/doc/html/index.html) library. The sorted chunks are saved into temporary files (`-g` flag) before
+being merged into the final output file (`-f` flag).
+
+<img
+  width="320px"
+  alt="Screenshot 2"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/screenshot2.png">
+
+The verification process, with the `-v` flag, sequentially reads the final
+sorted file to make sure that all records are in correct order. The verification
+also checks for empty nonce entries.
+
+<img
+  width="320px"
+  alt="Screenshot 3.1"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/screenshot3_1.png">
+<img
+  width="320px"
+  alt="Screenshot 3.2"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/screenshot3_2.png">
+
 > Once you have everything done, we want to search through the file. You are
   going to generate random search queries based on the difficulty, and execute
   the search, and report statistics at the end of the search.
@@ -139,6 +175,16 @@
 > avg_matches_per_found=0.000
 > ```
 
+Searching is done with the `-s` and `-q` flags, defining the number of searches
+and difficulty, respectively. Each search query is performed using binary search
+on the sorted file to minimize disk seeks per query. When a match is found, the
+program then scans backwards and forwards to find all matching records.
+
+<img
+  width="320px"
+  alt="Screenshot 4"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/screenshot4.png">
+
 > You are to create a makefile that helps build your benchmark, as well as run
   it through the benchmark bash script. You must be able to configure the
   `NONCE_SIZE` and `HASH_SIZE` at compile time, or possibly at runtime through a
@@ -159,6 +205,16 @@
 > - You must use binary data when writing in this benchmark.
 > - No GUIs are required. Simple command line interfaces are required.
 
+Nonce and record sizes are configurable at compile-time using
+`-DNONCE_SIZE=6 -DHASH_SIZE=10` with CMake. These options are passed to the
+compiler during build time, or fallback to default values defined in
+`CMakeLists.txt`.
+
+<img
+  width="320px"
+  alt="Screenshot 5"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/screenshot5.png">
+
 ## Problem 1
 
 > You will have several command line arguments that you will explore from a
@@ -177,29 +233,36 @@
 >
 > Fill in the table below for the small workload $(K = 26)$:
 
-Threads | Memory size | IO threads (1) | IO threads (2) | IO threads (4)
+Based on the results from the small workload benchmark, the throughput
+performance grows with the number of compute threads, although the improvement
+is negligible after 24 threads. Larger memory sizes also help improve the
+throughput, but is not always consistent like the number of threads. Oddly,
+increasing the number of IO threads impacts the performance negatively, at least
+in small workloads.
+
+Threads | Memory size | 1 IO threads (MH/s) | 2 IO threads (MH/s) | 4 IO threads (MH/s)
 ---: | ---: | ---: | ---: | ---:
-1 | 256 |  |  |
-1 | 512 |  |  |
-1 | 1,024 |  |  |
-2 | 256 |  |  |
-2 | 512 |  |  |
-2 | 1,024 |  |  |
-4 | 256 |  |  |
-4 | 512 |  |  |
-4 | 1,024 |  |  |
-8 | 256 |  |  |
-8 | 512 |  |  |
-8 | 1,024 |  |  |
-12 | 256 |  |  |
-12 | 512 |  |  |
-12 | 1,024 |  |  |
-24 | 256 |  |  |
-24 | 512 |  |  |
-24 | 1,024 |  |  |
-48 | 256 |  |  |
-48 | 512 |  |  |
-48 | 1,024 |  |  |
+1 | 256 | 4.70642 | 4.58874 | 5.01103
+1 | 512 | 5.06895 | 5.07055 | 4.96701
+1 | 1,024 | 5.11752 | 5.14437 | 5.14633
+2 | 256 | 5.80156 | 5.83668 | 5.86966
+2 | 512 | 6.47532 | 6.52293 | 6.41774
+2 | 1,024 | 6.68696 | 6.75846 | 6.66097
+4 | 256 | 7.42224 | 6.26674 | 6.26236
+4 | 512 | 7.46685 | 7.53278 | 7.25330
+4 | 1,024 | 7.08692 | 7.08101 | 7.01328
+8 | 256 | 7.28460 | 7.30864 | 7.27058
+8 | 512 | 10.79820 | 8.23176 | 8.21978
+8 | 1,024 | 7.91785 | 7.75438 | 8.84303
+12 | 256 | 9.30797 | 7.38320 | 7.34609
+12 | 512 | 8.55917 | 11.01410 | 8.49093
+12 | 1,024 | 9.13278 | 8.81494 | 8.96643
+24 | 256 | 7.61887 | 7.68504 | 7.64386
+24 | 512 | 9.32281 | 8.67591 | 8.86775
+24 | 1,024 | 9.31559 | 9.54625 | 9.43943
+48 | 256 | 7.79639 | 7.62827 | 7.66559
+48 | 512 | 8.94213 | 8.94200 | 8.93600
+48 | 1,024 | 9.70507 | 11.37100 | 9.46415
 
 ## Problem 2
 
@@ -217,15 +280,21 @@ Threads | Memory size | IO threads (1) | IO threads (2) | IO threads (4)
 >
 > Fill in the table below for the large workload $(K = 32)$:
 
-Threads | Memory size | IO threads (1)
+Increasing the memory size improves the throughput performance for large
+workloads, up to a certain point. After 32GB of memory, the performance
+significantly drops, likely due to excessive memory allocation given only one
+IO thread. The GCC optimization flags are notably impactful in this benchmark,
+trimming off minutes from the hash generation time.
+
+Threads | Memory size | 1 IO threads (MH/s)
 ---: | ---: | ---:
-24 | 1,024 |
-24 | 2,048 |
-24 | 4,096 |
-24 | 8,192 |
-24 | 16,384 |
-24 | 32,768 |
-24 | 65,536 |
+24 | 1,024 | 7.14540
+24 | 2,048 | 7.92516
+24 | 4,096 | 8.63750
+24 | 8,192 | 9.38243
+24 | 16,384 | 9.90971
+24 | 32,768 | 9.99402
+24 | 65,536 | 7.90725
 
 ## Problem 3
 
@@ -238,33 +307,48 @@ Threads | Memory size | IO threads (1)
 > 1.  $K = 32$, fixed write threads = 1, fixed compute threads = 24, vary memory
       size
 
+<img
+  width="640px"
+  alt="Figure 1"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/figure1.png">
+
+<img
+  width="640px"
+  alt="Figure 2"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/figure2.png">
+
 ## Problem 4
 
 > Explain why you believe the best and worst configurations make sense.
+
+The best configuration for small workloads is 12 compute threads and 1024 MB of
+memory size, achieving approximately 9 MH/s. The IO threads do not seem to
+impact since file to write is small enough to be handled by a single thread. In
+the large workload, the best configuration is 24 threads and 32 GB of memory.
+The OpenMP parallelization approach performs better in both cases, reducing up
+to 110 seconds in the k=32 workload with default options.
+
+The worst configuration for any case is 1 compute thread and 256 MB of memory.
+This is to be expected since single-threaded execution cannot take advantage of
+worker threads or OpenMP parallelization. Low memory size also limits the
+amount of data that can be buffered before writing to disk.
 
 ## Problem 5
 
 > You must run a number of search workloads to fill in the following table:
 
-K | Difficulty | Number of searches | Average number of disk seek per search | Average data read per search (bytes) | Total time for all searches | Time / search (ms) | Throughput search / sec | Number of searches found | Number of searches not found
----: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---:
-26 | 3 | 1,000 |  |  |  |  |  |  |
-26 | 4 | 1,000 |  |  |  |  |  |  |
-26 | 5 | 1,000 |  |  |  |  |  |  |
-32 | 3 | 1,000 |  |  |  |  |  |  |
-32 | 4 | 1,000 |  |  |  |  |  |  |
-32 | 5 | 1,000 |  |  |  |  |  |  |
+<img
+  width="640px"
+  alt="Figure 3"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/figure3.png">
 
-## Problem 6
+K | Difficulty | Number of searches | Average number of disk seek per search | Average data read per search (bytes) | Total time for all searches | Time / search (ms) | Number of searches found | Number of searches not found
+---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---:
+26 | 3 | 1,000 | 1 | 4,096 | 1.83521 | 0.00183 | 1,000 | 0
+26 | 4 | 1,000 | 1 | 4,096 | 2.16235 | 0.00216 | 0 | 1,000
+26 | 5 | 1,000 | 1 | 4,096 | 2.17494 | 0.00217 | 0 | 1,000
+32 | 3 | 1,000 | 1 | 4,096 | 1.86285 | 0.00186 | 1,000 | 0
+32 | 4 | 1,000 | 1 | 4,096 | 1.87287 | 0.00187 | 0 | 1,000
+32 | 5 | 1,000 | 1 | 4,096 | 1.86923 | 0.00186 | 0 | 1,000
 
-> - **Compression (up to 10%):** If you can find a way to reduce the amount of
-  storage needed, to save less data than 16 bytes per record, you will likely
-  get improved performance.
-> - **Leaderboard (up to 10%):** If you will publish your best results of the 64GB
-  file with various memory configurations, you will get up to 10% extra credit
-  points depending on the ranking in the leaderboard. The #1 spot on the night
-  of the deadline will receive 10% extra credit (with proper verification). The
-  #2 spot will receive 9%. #3 will get 8%, and so on. The top 9 spots will
-  receive between 2% and 10% extra credit. Everyone else will receive 1% extra
-  credit for submitting. Your solution must be correct functionally to receive
-  the extra credit.
+[Blake3]: https://github.com/BLAKE3-team/BLAKE3

@@ -22,7 +22,6 @@ To determine the estimated USD revenue, we need the hashrate, the current Monero
 1.  Current Monero Price (XMR to USD):
 
     Approximately $287.76 USD per XMR (as of the search results).
-
 1.  Estimated Daily Monero (XMR) Mined (based on current network stats):
     Using a profitability calculator with the given hashrate (and typical Monero
     network data like a network hashrate of ∼5.5 GH/s, and a block reward of

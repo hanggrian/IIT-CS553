@@ -190,11 +190,11 @@ $$
   &= (1,303 \cdot 2 \cdot 2 + 94 \cdot 2.6 + 67 \cdot 0.7)
     \cdot 60\\% \cdot 1.5 \\\\
   &= (5,212 + 244.4 + 46.9) \cdot 90\\% \\\\
-  &= 5503.3 \cdot 90\\% \\\\
-  &= \mathbf{4952.97} \\\\
+  &= 5,503.3 \cdot 90\\% \\\\
+  &= \mathbf{4,952.97} \\\\
   \textsf{5-year electricity (kWh)} &=
     (\textsf{Electricity} \cdot 24 \cdot 365) \cdot 5 \\\\
-  &= (4952.97 \cdot 24 \cdot 365) \cdot 5 \\\\
+  &= (4,952.97 \cdot 24 \cdot 365) \cdot 5 \\\\
   &= 43,388,017.2 \cdot 5 \\\\
   &= \mathbf{216,940,086}
 \end{align}
@@ -305,9 +305,18 @@ other hand, the Mac Mini has the lowest TDP and may not be sufficient for heavy
 workloads. The Mac Studio is currently the most balanced option until the Mac
 Pro is refreshed.
 
+<img
+  width="320px"
+  alt="Screenshot 2.1.1"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw3/screenshot2_1_1.png">
+<img
+  width="320px"
+  alt="Screenshot 2.1.2"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw3/screenshot2_1_2.png">
+
 <div class="item-column">Server</div> | Screenshot
 --- | ---
-<a href="https://www.apple.com/shop/buy-mac/mac-studio/apple-m3-ultra-with-28-core-cpu-60-core-gpu-32-core-neural-engine-96gb-memory-1tb">Mac Studio</a><ul><li>Apple M3 Ultra (28 vCPU)</li><li>96GB memory</li><li>1TB SSD</li></ul> | <img width="100%" alt="Screenshot 2.1.1" src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw3/screenshot2_1_1.png">
+<a href="https://www.apple.com/shop/buy-mac/mac-studio/apple-m3-ultra-with-28-core-cpu-60-core-gpu-32-core-neural-engine-96gb-memory-1tb">Mac Studio</a><ul><li>Apple M3 Ultra (28 vCPU)</li><li>96GB memory</li><li>1TB SSD</li></ul> | <img width="100%" alt="Screenshot 2.1.3" src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw3/screenshot2_1_3.png">
 
 RackSolutions has an interesting solution for mounting six Mac Studios in a 5U
 rackmount chassis. In turn, eight such chassis can fit in a 42U rack, leaving
@@ -329,21 +338,21 @@ $$
 
 <div class="item-column">Rack mount</div> | Screenshot
 --- | ---
-<a href="https://www.racksolutions.com/hypershelf-apple-mac-studio-sliding-shelf.html">RackSolutions 5U HyperShelf</a><ul><li>6 Apple Mac Studio</li></ul> | <img width="100%" alt="Screenshot 2.1.2" src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw3/screenshot2_1_2.png">
+<a href="https://www.racksolutions.com/hypershelf-apple-mac-studio-sliding-shelf.html">RackSolutions 5U HyperShelf</a><ul><li>6 Apple Mac Studio</li></ul> | <img width="100%" alt="Screenshot 2.1.4" src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw3/screenshot2_1_4.png">
 
 Since modern Macs are not upgradable, the cooling solution is limited to
 external air cooling. One industrial fan is equipped for each rack mount.
 
 <div class="item-column">Cooling</div> | Screenshot
 --- | ---
-<a href="https://www.racksolutions.com/hypershelf-apple-mac-studio-sliding-shelf.html">RackSolutions NEMA 1-15P Fan Upgrade Kit</a><ul><li>RackSolutions HyperShelves</li></ul> | <img width="100%" alt="Screenshot 2.1.3" src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw3/screenshot2_1_3.png">
+<a href="https://www.racksolutions.com/hypershelf-apple-mac-studio-sliding-shelf.html">RackSolutions NEMA 1-15P Fan Upgrade Kit</a><ul><li>RackSolutions HyperShelves</li></ul> | <img width="100%" alt="Screenshot 2.1.5" src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw3/screenshot2_1_5.png">
 
 With six servers in each mount, one rack can have up to 48 servers. This means
 that each rack requires a network switch with at least 48 ports.
 
 <div class="item-column">Network switch</div> | Screenshot
 --- | ---
-<a href="https://www.fs.com/products/201303.html">IES5120-48T4S</a><ul><li>RJ45</li><li>40 &times; 10GbE</li></ul> | <img width="100%" alt="Screenshot 2.1.4" src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw3/screenshot2_1_4.png">
+<a href="https://www.fs.com/products/201303.html">IES5120-48T4S</a><ul><li>RJ45</li><li>40 &times; 10GbE</li></ul> | <img width="100%" alt="Screenshot 2.1.6" src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw3/screenshot2_1_6.png">
 
 It is estimated that 10ft cables are sufficient for a 48U rack in Problem 1.
 Based on the same, perhaps flawed logic, 7ft cables should be sufficient for a
@@ -351,7 +360,7 @@ Based on the same, perhaps flawed logic, 7ft cables should be sufficient for a
 
 <div class="item-column">Network cable</div> | Screenshot
 --- | ---
-<a href="https://www.fs.com/products/148300.html">7ft Cat6a 26AWG Snagless Shielded</a><ul><li>RJ45</li><li>10GbE</li></ul> | <img width="100%" alt="Screenshot 2.1.5" src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw3/screenshot2_1_5.png">
+<a href="https://www.fs.com/products/148300.html">7ft Cat6a 26AWG Snagless Shielded</a><ul><li>RJ45</li><li>10GbE</li></ul> | <img width="100%" alt="Screenshot 2.1.7" src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw3/screenshot2_1_7.png">
 
 I received conflicting information where [a technical specification page](https://www.apple.com/mac-studio/specs/)
 lists the Mac Studio's power consumption as 480W, while [a support page](https://support.apple.com/en-us/102027)
@@ -600,9 +609,9 @@ $$
 
 It is easy to see that on-premises solutions are significantly cheaper than
 cloud providers in all configurations. However, I personally did not expect the
-gap to be this wide (over 100x in Configuration 1). One takeaway from this
-study is that, when an application is growing on public cloud, it is better to
-migrate to on-premises rather than scaling up on the cloud.
+gap to be this wide (over 10x in Configuration 1). One takeaway from this study
+is that, when an application is growing on public cloud, it is better to migrate
+to on-premises rather than scaling up on the cloud.
 
 | | Configuration 1 | Configuration 2
 --- | ---: | ---:

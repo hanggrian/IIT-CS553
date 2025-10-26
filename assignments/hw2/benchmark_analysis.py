@@ -48,7 +48,8 @@ def latency_graph(
     for host_type, metric in collection.items():
         axes1.plot(
             THREADS,
-            [metric[str(t)]['latency'] for t in THREADS], 's-',
+            [metric[str(t)]['latency'] for t in THREADS],
+            's-',
             label=f'{host_type}',
         )
         axes2.plot(
@@ -151,21 +152,17 @@ def operations_graph(
 
 if __name__ == '__main__':
     print('Loading benchmark results...')
-
     if not exists(RESULT_FILE):
         die(f"Input file '{RESULT_FILE}' not found.")
-
     with open(RESULT_FILE) as f:
-        result_file = load(f)
+        result = load(f)
 
-    latency_graph(get_collection(result_file, 'cpu'), 'CPU', 'ms', 'records/s')
-    operations_graph(get_collection(result_file, 'memory'), 'Memory', None, 'MiB/sec')
-    operations_graph(get_collection(result_file, 'disk'), 'Disk', None, 'MiB/sec')
-    operations_graph(
-        get_collection(result_file, 'network'), 'Network', None, 'Gbits/sec',
-    )
+    latency_graph(get_collection(result, 'cpu'), 'CPU', 'ms', 'records/s')
+    operations_graph(get_collection(result, 'memory'), 'Memory', None, 'MiB/sec')
+    operations_graph(get_collection(result, 'disk'), 'Disk', None, 'MiB/sec')
+    operations_graph(get_collection(result, 'network'), 'Network', None, 'Gbits/sec')
+
     print(f'{GREEN}Plotting complete.{END}')
-
     print()
     print('Goodbye!')
     exit(0)
