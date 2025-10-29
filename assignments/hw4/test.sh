@@ -4,6 +4,10 @@ source _lib.sh
 
 cd "$BUILD_DIRECTORY" || die 'Build directory not found.'
 
+if [[ ! -f ./vaultx ]]; then
+  die 'Executable file not found.'
+fi
+
 echo "${BOLD}Showing help command:$END"
 ./vaultx -h
 

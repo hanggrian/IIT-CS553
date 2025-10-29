@@ -1,26 +1,21 @@
 from json import load
 from os.path import exists
-from sys import exit, stderr
+from sys import stdout, stderr, exit as sysexit
 
+from colorama import Fore, Style
 from matplotlib.pyplot import subplots, tight_layout, show
-
-END = '\033[0m'
-BOLD = '\033[1m'
-RED = '\033[91m'
-GREEN = '\033[92m'
-YELLOW = '\033[93m'
 
 RESULT_FILE = 'benchmark_result.json'
 THREADS = [1, 2, 4, 8, 16, 32]
 
 
 def warn(message: str) -> None:
-    print(f'{YELLOW}{message}{END}', file=stderr)
+    print(f'{Fore.YELLOW}{message}{Style.RESET_ALL}', file=stdout)
 
 
 def die(message: str) -> None:
-    print(f'\n{RED}{message}{END}\n', file=stderr)
-    exit(1)
+    print(f'\n{Fore.RED}{message}{Style.RESET_ALL}\n', file=stderr)
+    sysexit(1)
 
 
 def get_collection(root, hardware_type: str):
@@ -154,7 +149,7 @@ if __name__ == '__main__':
     print('Loading benchmark results...')
     if not exists(RESULT_FILE):
         die(f"Input file '{RESULT_FILE}' not found.")
-    with open(RESULT_FILE) as f:
+    with open(RESULT_FILE, encoding='UTF-8') as f:
         result = load(f)
 
     latency_graph(get_collection(result, 'cpu'), 'CPU', 'ms', 'records/s')
@@ -162,7 +157,6 @@ if __name__ == '__main__':
     operations_graph(get_collection(result, 'disk'), 'Disk', None, 'MiB/sec')
     operations_graph(get_collection(result, 'network'), 'Network', None, 'Gbits/sec')
 
-    print(f'{GREEN}Plotting complete.{END}')
+    print(f'{Fore.GREEN}Plotting complete.{Style.RESET_ALL}')
     print()
     print('Goodbye!')
-    exit(0)

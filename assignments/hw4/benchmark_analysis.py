@@ -1,14 +1,9 @@
 from json import load
 from os.path import exists
-from sys import exit, stderr
+from sys import stdout, stderr, exit as sysexit
 
+from colorama import Fore, Style
 from matplotlib.pyplot import subplots, tight_layout, show
-
-END = '\033[0m'
-BOLD = '\033[1m'
-RED = '\033[91m'
-GREEN = '\033[92m'
-YELLOW = '\033[93m'
 
 SMALL_RESULT_FILE = 'benchmark_result1.json'
 LARGE_RESULT_FILE = 'benchmark_result2.json'
@@ -20,12 +15,12 @@ SEARCH_BENCHMARK_DIFFICULTIES = [3, 4, 5]
 
 
 def warn(message: str) -> None:
-    print(f'{YELLOW}{message}{END}', file=stderr)
+    print(f'{Fore.YELLOW}{message}{Style.RESET_ALL}', file=stdout)
 
 
 def die(message: str) -> None:
-    print(f'\n{RED}{message}{END}\n', file=stderr)
-    exit(1)
+    print(f'\n{Fore.RED}{message}{Style.RESET_ALL}\n', file=stderr)
+    sysexit(1)
 
 
 if __name__ == '__main__':
@@ -34,11 +29,11 @@ if __name__ == '__main__':
         not exists(LARGE_RESULT_FILE) or \
         not exists(SEARCH_RESULT_FILE):
         die(f'Benchmark results not found.')
-    with open(SMALL_RESULT_FILE, 'r') as f:
+    with open(SMALL_RESULT_FILE, 'r', encoding='UTF-8') as f:
         small_result = load(f)
-    with open(LARGE_RESULT_FILE, 'r') as f:
+    with open(LARGE_RESULT_FILE, 'r', encoding='UTF-8') as f:
         large_result = load(f)
-    with open(SEARCH_RESULT_FILE, 'r') as f:
+    with open(SEARCH_RESULT_FILE, 'r', encoding='UTF-8') as f:
         search_result = load(f)
 
     fig3, ((axes1, axes2), (axes3, axes4)) = subplots(2, 2, figsize=(10, 6))
@@ -128,7 +123,6 @@ if __name__ == '__main__':
     tight_layout()
     show()
 
-    print(f'{GREEN}Plotting complete.{END}')
+    print(f'{Fore.GREEN}Plotting complete.{Style.RESET_ALL}')
     print()
     print('Goodbye!')
-    exit(0)
