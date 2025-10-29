@@ -131,4 +131,3 @@ if __name__ == '__main__':
     print(f'{GREEN}Plotting complete.{END}')
     print()
     print('Goodbye!')
-    exit(0)

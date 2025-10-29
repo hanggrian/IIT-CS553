@@ -4,11 +4,11 @@ source _lib.sh
 
 cd "$BUILD_DIRECTORY" || die 'Build directory not found.'
 
-warn 'Long running benchmarks, pause with Ctrl+S and resume with Ctrl+Q.'
-
-if [ ! -f ./vaultx ]; then
+if [[ ! -f ./vaultx ]]; then
   die 'Executable file not found.'
 fi
+
+warn 'Long running benchmarks, pause with Ctrl+S and resume with Ctrl+Q.'
 
 prompt_yn() {
   while true; do
