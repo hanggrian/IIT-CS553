@@ -3,7 +3,7 @@ from os.path import exists
 from sys import stdout, stderr, exit as sysexit
 
 from colorama import Fore, Style
-from matplotlib.pyplot import subplots, tight_layout, show
+from matplotlib import pyplot
 
 SMALL_RESULT_FILE = 'benchmark_result1.json'
 LARGE_RESULT_FILE = 'benchmark_result2.json'
@@ -23,12 +23,17 @@ def die(message: str) -> None:
     sysexit(1)
 
 
+def show_tight():
+    pyplot.tight_layout()
+    pyplot.show()
+
+
 if __name__ == '__main__':
     print('Loading benchmark results...')
     if not exists(SMALL_RESULT_FILE) or \
         not exists(LARGE_RESULT_FILE) or \
         not exists(SEARCH_RESULT_FILE):
-        die(f'Benchmark results not found.')
+        die('Benchmark results not found.')
     with open(SMALL_RESULT_FILE, 'r', encoding='UTF-8') as f:
         small_result = load(f)
     with open(LARGE_RESULT_FILE, 'r', encoding='UTF-8') as f:
@@ -40,13 +45,14 @@ if __name__ == '__main__':
     fig3.suptitle('Small workload (K=26)', fontweight='bold')
 
     for io_threads, ax in {1: axes1, 2: axes2, 4: axes3}.items():
-        for mem in [256, 512, 1024]:
+        [
             ax.plot(
                 SMALL_BENCHMARK_THREADS,
                 [small_result[str(t)][str(mem)][str(io_threads)] for t in SMALL_BENCHMARK_THREADS],
                 'o-',
                 label=f'{mem} MB',
-            )
+            ) for mem in (256, 512, 1024)
+        ]
 
         ax.set_xlabel('# of compute threads')
         ax.set_ylabel('Throughput (MH/s)')
@@ -59,10 +65,9 @@ if __name__ == '__main__':
 
     axes4.axis('off')
 
-    tight_layout()
-    show()
+    show_tight()
 
-    fig2, ax = subplots(figsize=(10, 6))
+    fig2, ax = pyplot.subplots(figsize=(10, 6))
     fig2.suptitle('Large workload (K=32)', fontweight='bold')
 
     throughputs = [large_result['24'][str(mem)]['1'] for mem in LARGE_BENCHMARK_MEMORIES]
@@ -85,19 +90,19 @@ if __name__ == '__main__':
         [f'{m // 1024}GB' if m >= 1024 else f'{m}MB' for m in LARGE_BENCHMARK_MEMORIES],
     )
 
-    for mem, tp in zip(LARGE_BENCHMARK_MEMORIES, throughputs):
+    [
         ax.annotate(
             f'{tp:.1f}',
             xy=(mem, tp),
             xytext=(0, 10),
             textcoords='offset points',
             ha='center',
-        )
+        ) for mem, tp in zip(LARGE_BENCHMARK_MEMORIES, throughputs)
+    ]
 
-    tight_layout()
-    show()
+    show_tight()
 
-    fig4, axes = subplots(1, 2, figsize=(10, 6))
+    fig4, axes = pyplot.subplots(1, 2, figsize=(10, 6))
     fig4.suptitle('Search benchmark', fontweight='bold')
 
     for ax, k in zip(axes, [26, 32]):
@@ -120,8 +125,7 @@ if __name__ == '__main__':
         ax.set_xticks(difficulties)
         ax.legend()
 
-    tight_layout()
-    show()
+    show_tight()
 
     print(f'{Fore.GREEN}Plotting complete.{Style.RESET_ALL}')
     print()

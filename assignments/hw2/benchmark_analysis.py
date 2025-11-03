@@ -3,7 +3,7 @@ from os.path import exists
 from sys import stdout, stderr, exit as sysexit
 
 from colorama import Fore, Style
-from matplotlib.pyplot import subplots, tight_layout, show
+from matplotlib import pyplot
 
 RESULT_FILE = 'benchmark_result.json'
 THREADS = [1, 2, 4, 8, 16, 32]
@@ -29,6 +29,11 @@ def parenthesized_or_empty(description: str | None) -> str:
     return '' if description is None else f" ({description})"
 
 
+def show_tight():
+    pyplot.tight_layout()
+    pyplot.show()
+
+
 def latency_graph(
     collection,
     hardware_type: str,
@@ -37,7 +42,7 @@ def latency_graph(
 ) -> None:
     print(f'Generating {hardware_type} graph...')
 
-    figure, ((axes1, axes2), (axes3, axes4)) = subplots(2, 2, figsize=(10, 6))
+    figure, ((axes1, axes2), (axes3, axes4)) = pyplot.subplots(2, 2, figsize=(10, 6))
     figure.suptitle(f'{hardware_type} benchmark', fontweight='bold')
 
     for host_type, metric in collection.items():
@@ -83,8 +88,7 @@ def latency_graph(
 
     axes4.axis('off')
 
-    tight_layout()
-    show()
+    show_tight()
 
 
 def operations_graph(
@@ -95,7 +99,7 @@ def operations_graph(
 ) -> None:
     print(f'Generating {hardware_type} graph...')
 
-    figure, ((axes1, axes2), (axes3, axes4)) = subplots(2, 2, figsize=(10, 6))
+    figure, ((axes1, axes2), (axes3, axes4)) = pyplot.subplots(2, 2, figsize=(10, 6))
     figure.suptitle(f'{hardware_type} benchmark', fontweight='bold')
 
     for host_type, metric in collection.items():
@@ -141,8 +145,7 @@ def operations_graph(
 
     axes4.axis('off')
 
-    tight_layout()
-    show()
+    show_tight()
 
 
 if __name__ == '__main__':

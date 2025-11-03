@@ -1,11 +1,10 @@
 from os import remove
 from os.path import exists, splitext
 from subprocess import run, CalledProcessError
-from sys import exit, stderr
+from sys import stdout, stderr, exit as sysexit
 from time import time
 
-from matplotlib.pyplot import figure, plot, xlabel, ylabel, title, legend, grid, xscale, yscale, \
-    tight_layout, show
+from matplotlib import pyplot
 
 END = '\033[0m'
 BOLD = '\033[1m'
@@ -15,12 +14,12 @@ YELLOW = '\033[93m'
 
 
 def warn(message: str) -> None:
-    print(f'{YELLOW}{message}{END}', file=stderr)
+    print(f'{YELLOW}{message}{END}', file=stdout)
 
 
 def die(message: str) -> None:
     print(f'\n{RED}{message}{END}\n', file=stderr)
-    exit(1)
+    sysexit(1)
 
 
 GENERATE_SCRIPT = './generate_dataset.sh'
@@ -67,30 +66,30 @@ if __name__ == '__main__':
 
         print(f'{GREEN}Completed at {generate_time + sort_time:.2f}s.{END}')
 
-        for file_name in [filename, f'{filename_sorted}']:
+        for file_name in (filename, f'{filename_sorted}'):
             if exists(file_name):
                 remove(file_name)
 
-    figure(figsize=(10, 6))
+    pyplot.figure(figsize=(10, 6))
 
-    plot(SCALES, generation_times, 'o-', label='Generation time', linewidth=2)
-    plot(SCALES, sorting_times, 's-', label='Sorting time', linewidth=2)
+    pyplot.plot(SCALES, generation_times, 'o-', label='Generation time', linewidth=2)
+    pyplot.plot(SCALES, sorting_times, 's-', label='Sorting time', linewidth=2)
 
-    xlabel('# of records')
-    ylabel('Duration')
-    title('Generation vs. sorting time')
+    pyplot.xlabel('# of records')
+    pyplot.ylabel('Duration')
+    pyplot.suptitle('Generation vs. sorting time', fontweight='bold')
 
-    legend()
-    grid(True, alpha=0.3)
+    pyplot.legend()
+    pyplot.grid(True, alpha=0.3)
 
     if max(SCALES) / min(SCALES) > 50:
-        xscale('log')
-    if max(max(generation_times), max(sorting_times)) / \
-        min(min(generation_times), min(sorting_times)) > 10:
-        yscale('log')
+        pyplot.xscale('log')
+    if max(*generation_times, *sorting_times) / \
+        min(*generation_times, *sorting_times) > 10:
+        pyplot.yscale('log')
 
-    tight_layout()
-    show()
+    pyplot.tight_layout()
+    pyplot.show()
 
     print()
     print('Goodbye!')

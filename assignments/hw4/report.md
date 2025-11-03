@@ -310,12 +310,12 @@ Threads | Memory size | 1 IO threads (MH/s)
 <img
   width="640px"
   alt="Figure 1"
-  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/figure1.png">
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/figure1.svg">
 
 <img
   width="640px"
   alt="Figure 2"
-  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/figure2.png">
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/figure2.svg">
 
 ## Problem 4
 
@@ -340,7 +340,7 @@ amount of data that can be buffered before writing to disk.
 <img
   width="640px"
   alt="Figure 3"
-  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/figure3.png">
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/figure3.svg">
 
 K | Difficulty | Number of searches | Average number of disk seek per search | Average data read per search (bytes) | Total time for all searches | Time / search (ms) | Number of searches found | Number of searches not found
 ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---:
