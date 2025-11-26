@@ -10,7 +10,7 @@ Example: cpu_benchmark.sh file.txt
 Executes a series of sysbench CPU benchmark.
 
 Arguments:
-  <filename>  The name of the output file to create.'
+  <filename> The name of the output file to create.'
 
 readonly FILENAME="$1"
 

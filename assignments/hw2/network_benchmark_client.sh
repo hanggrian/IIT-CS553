@@ -10,7 +10,7 @@ Example: network_benchmark_client.sh file.txt logs.txt
 Executes a series of iperf network benchmark.
 
 Arguments:
-  <filename>  The input file from network_benchmark_server.sh.'
+  <filename> The input file from network_benchmark_server.sh.'
 
 readonly FILENAME="$1"
 

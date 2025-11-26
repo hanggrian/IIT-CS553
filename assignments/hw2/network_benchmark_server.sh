@@ -11,7 +11,7 @@ Starts an iperf server for memory benchmark triggered by the client. The output
 file of this command should be used as an input in the client's command.
 
 Arguments:
-  <filename>  The name of the output file to create."
+  <filename> The name of the output file to create."
 
 readonly FILENAME="$1"
 

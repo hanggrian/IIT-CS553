@@ -14,7 +14,7 @@
 
 > What is the difference between `set()` and `option()` in CMakeLists.txt?
 
-Here’s the clear difference in one table:
+Here's the clear difference in one table:
 
 Feature | `set()` | `option()`
 --- | --- | ---

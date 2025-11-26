@@ -1,0 +1,45 @@
+[versions]
+java-compile = "11"
+java-support = "8"
+junit = "5.14.0"
+checkstyle = "10.25.0"
+hadoop = "3.3.6"
+spark = "3.4.1"
+
+[plugins]
+git-publish = "org.ajoberstar.git-publish:5.1.3"
+pages = "com.hanggrian.pages:0.2"
+
+[libraries]
+# lint
+rulebook-checkstyle = "com.hanggrian.rulebook:rulebook-checkstyle:0.1"
+# main
+hadoop-common = { module = "org.apache.hadoop:hadoop-common", version.ref = "hadoop" }
+hadoop-hdfs = { module = "org.apache.hadoop:hadoop-hdfs", version.ref = "hadoop" }
+hadoop-mapreduce-client-core = { module = "org.apache.hadoop:hadoop-mapreduce-client-core", version.ref = "hadoop" }
+hadoop-mapreduce-client-jobclient = { module = "org.apache.hadoop:hadoop-mapreduce-client-jobclient", version.ref = "hadoop" }
+spark-core = { module = "org.apache.spark:spark-core_2.12", version.ref = "spark" }
+spark-sql = { module = "org.apache.spark:spark-sql_2.12", version.ref = "spark" }
+commons-codec = "commons-codec:commons-codec:1.20.0"
+commons-lang = "commons-lang:commons-lang:2.6"
+# test
+junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+junit-platform-launcher = "org.junit.platform:junit-platform-launcher:1.14.0"
+truth = "com.google.truth:truth:1.4.5"
+
+[bundles]
+hadoop = [
+  "hadoop-common",
+  "hadoop-hdfs",
+  "hadoop-mapreduce-client-core",
+  "hadoop-mapreduce-client-jobclient",
+]
+spark = [
+  "spark-core",
+  "spark-sql",
+]
+junit5 = [
+  "junit-jupiter",
+  "truth",
+]

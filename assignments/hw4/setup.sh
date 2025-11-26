@@ -33,7 +33,7 @@ has_package() {
 }
 
 # macOS requires Homebrew
-if [[ "$KERNEL_NAME" = 'Darwin' ]]; then
+if [[ "$(uname)" = 'Darwin' ]]; then
   if ! has_package 'brew'; then
     die 'Need Homebrew.'
   fi

@@ -18,7 +18,7 @@ In this homework, the model that answered my prompts was *ChatGPT* using
 > How to pass a callable as a function parameter in Bash? What if the callable
   is a predicate, that is, an invokable with a return value.
 
-Bash doesn’t have "first-class functions" like Python or JavaScript, but you can
+Bash doesn't have "first-class functions" like Python or JavaScript, but you can
 still **pass callables** around in a few different ways. The most common
 patterns are:
 
@@ -80,7 +80,7 @@ check_predicate is_even 5   # → Predicate false
   list of strings?
 
 In Bash, `eval` takes a single string, concatenates it, and executes it as a
-command. If you already have **a list of strings,** you don’t usually need
+command. If you already have **a list of strings,** you don't usually need
 eval—you can just execute them directly.
 
 #### Running a list of commands stored in an array

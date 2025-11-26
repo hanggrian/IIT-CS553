@@ -10,8 +10,8 @@ Example: generate_dataset.sh file.txt 100
 Generates a benchmark report and logs its completion in the background.
 
 Arguments:
-  <filename>      The name of the output file to create.
-  <record_count>  The number of records to generate.'
+  <filename>     The name of the output file to create.
+  <record_count> The number of records to generate.'
 
 readonly FILENAME="$1"
 readonly RECORD_COUNT="$2"

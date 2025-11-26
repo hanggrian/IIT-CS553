@@ -463,7 +463,7 @@ scheduled to execute at a specified time.
 
 > 42. uname
 
-`uname` shows the system’s Linux version and distribution.
+`uname` shows the system's Linux version and distribution.
 
 <img
   width="320px"
@@ -575,7 +575,7 @@ left unconfigured.
       The benchmark should run for at least 10 seconds, and it should complete
       even if the ssh (or bash) session is terminated. How many records does
       your file contain after running it? You must write this script entirely
-      with existing Linux commands (which you can install if they don’t exist on
+      with existing Linux commands (which you can install if they don't exist on
       your system), without using any other programming languages like C, C++,
       Java, or Python.
 
@@ -725,7 +725,7 @@ is newer and better.
       difference between them?
 
 A CPU core is a physical die full of transistors to compute instructions.
-Depending on the CPU’s multi-threading capability, each core may contain smaller
+Depending on the CPU's multi-threading capability, each core may contain smaller
 threads that execute separate commands to achieve the end goal faster. The
 capability is tightly integrated into the CPU architecture and has different
 branding for each company: Hyper-threading for Intel and SMT for AMD.
@@ -800,17 +800,17 @@ However, it is growing increasingly difficult to keep shrinking the transistor
 size due to physical limitations. I believe such limitations prevent us from
 breaking the 1THz barrier.
 
-> 4.  Describe Moore’s Law. Is it going to go on forever? If not, when will it
+> 4.  Describe Moore's Law. Is it going to go on forever? If not, when will it
       end? Justify your answer to why it will end and when.
 
-Moore’s Law states that the industry should strive to double the transistor
+Moore's Law states that the industry should strive to double the transistor
 count every two years. Using these guidelines, Intel devised a plan that
 alternated between implementing new technologies and changing chip design each
 year, known as the tick-tock model.
 
-In my opinion, Moore’s Law died in 2002 when Intel failed to halve its process
+In my opinion, Moore's Law died in 2002 when Intel failed to halve its process
 node from **180 nm** to 90 nm. It was instead **130 nm** or 28% of size
-reduction, instead of the required 50%. Intel’s struggle is mostly apparent with
+reduction, instead of the required 50%. Intel's struggle is mostly apparent with
 **14 nm,** when it took them four years to get to **10 nm.**
 
 ## Problem 6

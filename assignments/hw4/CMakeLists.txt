@@ -37,7 +37,7 @@ find_package(Threads REQUIRED)
 find_package(OpenMP REQUIRED)
 
 add_executable(
-  vaultx
+  hashgen
   src/main.cpp
   src/generating.cpp
   src/sorting.cpp
@@ -47,7 +47,7 @@ add_executable(
 )
 
 target_link_libraries(
-  vaultx
+  hashgen
   PRIVATE
   blake3
   Boost::program_options

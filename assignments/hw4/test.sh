@@ -4,12 +4,12 @@ source _lib.sh
 
 cd "$BUILD_DIRECTORY" || die 'Build directory not found.'
 
-if [[ ! -f ./vaultx ]]; then
+if [[ ! -f ./hashgen ]]; then
   die 'Executable file not found.'
 fi
 
 echo "${BOLD}Showing help command:$END"
-./vaultx -h
+./hashgen -h
 
 echo "${BOLD}Testing threads & OpenMP with minimal configuration:$END"
 minimal_args=(
@@ -21,8 +21,8 @@ minimal_args=(
   -f k20-memo.x
   -d
 )
-./vaultx "${minimal_args[@]}"
-./vaultx "${minimal_args[@]}" -a task
+./hashgen "${minimal_args[@]}"
+./hashgen "${minimal_args[@]}" -a task
 echo
 
 echo "${BOLD}Testing verification & searching with small configuration:$END"
@@ -35,9 +35,9 @@ small_args=(
   -f k26-memo.x
   -d
 )
-./vaultx "${small_args[@]}" -a task
-./vaultx "${small_args[@]}" -v
-./vaultx "${small_args[@]}" -s 10 -q 3
+./hashgen "${small_args[@]}" -a task
+./hashgen "${small_args[@]}" -v
+./hashgen "${small_args[@]}" -s 10 -q 3
 echo
 
 echo "${GREEN}All tests completed.$END"
