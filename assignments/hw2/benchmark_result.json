@@ -1,394 +1,514 @@
 {
-  "cpu": {
-    "bare-metal": {
-      "1": {
-        "latency": 18.67,
-        "throughput": 53.53,
-        "overheads": 99
-      },
-      "2": {
-        "latency": 19.56,
-        "throughput": 102.21,
-        "overheads": 100
-      },
-      "4": {
-        "latency": 19.45,
-        "throughput": 205.48,
-        "overheads": 100
-      },
-      "8": {
-        "latency": 20.04,
-        "throughput": 398.71,
-        "overheads": 99
-      },
-      "16": {
-        "latency": 20.43,
-        "throughput": 782.38,
-        "overheads": 100
-      },
-      "32": {
-        "latency": 23.48,
-        "throughput": 1360.52,
-        "overheads": 99
-      }
-    },
-    "container": {
-      "1": {
-        "latency": 18.66,
-        "throughput": 53.55,
-        "overheads": 100
-      },
-      "2": {
-        "latency": 19.67,
-        "throughput": 101.61,
-        "overheads": 99
-      },
-      "4": {
-        "latency": 19.45,
-        "throughput": 205.47,
-        "overheads": 99
-      },
-      "8": {
-        "latency": 19.99,
-        "throughput": 399.89,
-        "overheads": 100
-      },
-      "16": {
-        "latency": 20.56,
-        "throughput": 776.85,
-        "overheads": 99
-      },
-      "32": {
-        "latency": 23.47,
-        "throughput": 1361.33,
-        "overheads": 100
-      }
-    },
-    "vm": {
-      "1": {
-        "latency": 18.87,
-        "throughput": 52.91,
-        "overheads": 98
-      },
-      "2": {
-        "latency": 19.83,
-        "throughput": 100.76,
-        "overheads": 98
-      },
-      "4": {
-        "latency": 19.61,
-        "throughput": 203.75,
-        "overheads": 99
-      },
-      "8": {
-        "latency": 20.15,
-        "throughput": 396.40,
-        "overheads": 99
-      },
-      "16": {
-        "latency": 20.79,
-        "throughput": 768.50,
-        "overheads": 98
-      },
-      "32": {
-        "latency": 23.59,
-        "throughput": 1354.59,
-        "overheads": 99
-      }
-    }
-  },
-  "memory": {
-    "bare-metal": {
-      "1": {
-        "operations": 22906443,
-        "throughput": 22369.57,
-        "efficiency": 99
-      },
-      "2": {
-        "operations": 44027063,
-        "throughput": 42995.18,
-        "efficiency": 100
-      },
-      "4": {
-        "operations": 77378502,
-        "throughput": 75564.94,
-        "efficiency": 100
-      },
-      "8": {
-        "operations": 125829120,
-        "throughput": 122880.00,
-        "efficiency": 100
-      },
-      "16": {
-        "operations": 125829120,
-        "throughput": 122880.00,
-        "efficiency": 100
-      },
-      "32": {
-        "operations": 125829120,
-        "throughput": 122880.00,
-        "efficiency": 100
-      }
-    },
-    "container": {
-      "1": {
-        "operations": 22936241,
-        "throughput": 22398.67,
-        "efficiency": 100
-      },
-      "2": {
-        "operations": 39730396,
-        "throughput": 38799.21,
-        "efficiency": 90
-      },
-      "4": {
-        "operations": 77242347,
-        "throughput": 75431.98,
-        "efficiency": 99
-      },
-      "8": {
-        "operations": 125829120,
-        "throughput": 122880.00,
-        "efficiency": 100
-      },
-      "16": {
-        "operations": 125829120,
-        "throughput": 122880.00,
-        "efficiency": 100
-      },
-      "32": {
-        "operations": 125829120,
-        "throughput": 122880.00,
-        "efficiency": 100
-      }
-    },
-    "vm": {
-      "1": {
-        "operations": 21749419,
-        "throughput": 21239.67,
-        "efficiency": 94
-      },
-      "2": {
-        "operations": 38151830,
-        "throughput": 37257.65,
-        "efficiency": 86
-      },
-      "4": {
-        "operations": 73990094,
-        "throughput": 72255.95,
-        "efficiency": 95
-      },
-      "8": {
-        "operations": 125829120,
-        "throughput": 122880.00,
-        "efficiency": 100
-      },
-      "16": {
-        "operations": 125829120,
-        "throughput": 122880.00,
-        "efficiency": 100
-      },
-      "32": {
-        "operations": 125829120,
-        "throughput": 122880.00,
-        "efficiency": 100
-      }
-    }
-  },
-  "disk": {
-    "bare-metal": {
-      "1": {
-        "operations": 93354,
-        "throughput": 36.45,
-        "efficiency": 20
-      },
-      "2": {
-        "operations": 170568,
-        "throughput": 66.59,
-        "efficiency": 19
-      },
-      "4": {
-        "operations": 322679,
-        "throughput": 125.98,
-        "efficiency": 21
-      },
-      "8": {
-        "operations": 531908,
-        "throughput": 207.66,
-        "efficiency": 18
-      },
-      "16": {
-        "operations": 676642,
-        "throughput": 264.26,
-        "efficiency": 14
-      },
-      "32": {
-        "operations": 851575,
-        "throughput": 332.58,
-        "efficiency": 15
-      }
-    },
-    "container": {
-      "1": {
-        "operations": 454448,
-        "throughput": 177.42,
-        "efficiency": 100
-      },
-      "2": {
-        "operations": 876696,
-        "throughput": 342.27,
-        "efficiency": 100
-      },
-      "4": {
-        "operations": 1503781,
-        "throughput": 587.10,
-        "efficiency": 100
-      },
-      "8": {
-        "operations": 2874140,
-        "throughput": 1122.52,
-        "efficiency": 100
-      },
-      "16": {
-        "operations": 4569054,
-        "throughput": 1784.47,
-        "efficiency": 100
-      },
-      "32": {
-        "operations": 5384094,
-        "throughput": 2102.76,
-        "efficiency": 100
-      }
-    },
-    "vm": {
-      "1": {
-        "operations": 133847,
-        "throughput": 52.24,
-        "efficiency": 29
-      },
-      "2": {
-        "operations": 276151,
-        "throughput": 107.80,
-        "efficiency": 31
-      },
-      "4": {
-        "operations": 546511,
-        "throughput": 213.29,
-        "efficiency": 36
-      },
-      "8": {
-        "operations": 763809,
-        "throughput": 298.17,
-        "efficiency": 26
-      },
-      "16": {
-        "operations": 872563,
-        "throughput": 340.69,
-        "efficiency": 19
-      },
-      "32": {
-        "operations": 738303,
-        "throughput": 288.20,
-        "efficiency": 13
-      }
-    }
-  },
-  "network": {
-    "bare-metal": {
-      "1": {
-        "operations": 34.4,
-        "throughput": 29.5,
-        "efficiency": 89
-      },
-      "2": {
-        "operations": 65.3,
-        "throughput": 56.0,
-        "efficiency": 90
-      },
-      "4": {
-        "operations": 119,
-        "throughput": 102,
-        "efficiency": 90
-      },
-      "8": {
-        "operations": 212,
-        "throughput": 182,
-        "efficiency": 95
-      },
-      "16": {
-        "operations": 313,
-        "throughput": 268,
-        "efficiency": 100
-      },
-      "32": {
-        "operations": 395,
-        "throughput": 339,
-        "efficiency": 100
-      }
-    },
-    "container": {
-      "1": {
-        "operations": 38.3,
-        "throughput": 33.3,
-        "efficiency": 100
-      },
-      "2": {
-        "operations": 72.4,
-        "throughput": 62.1,
-        "efficiency": 100
-      },
-      "4": {
-        "operations": 132,
-        "throughput": 113,
-        "efficiency": 100
-      },
-      "8": {
-        "operations": 221,
-        "throughput": 190,
-        "efficiency": 100
-      },
-      "16": {
-        "operations": 298,
-        "throughput": 255,
-        "efficiency": 95
-      },
-      "32": {
-        "operations": 379,
-        "throughput": 324,
-        "efficiency": 95
-      }
-    },
-    "vm": {
-      "1": {
-        "operations": 34.0,
-        "throughput": 29.2,
-        "efficiency": 88
-      },
-      "2": {
-        "operations": 50.9,
-        "throughput": 43.6,
-        "efficiency": 70
-      },
-      "4": {
-        "operations": 89.8,
-        "throughput": 76.9,
-        "efficiency": 68
-      },
-      "8": {
-        "operations": 166,
-        "throughput": 142,
-        "efficiency": 74
-      },
-      "16": {
-        "operations": 270,
-        "throughput": 231,
-        "efficiency": 86
-      },
-      "32": {
-        "operations": 324,
-        "throughput": 278,
-        "efficiency": 82
-      }
-    }
-  }
+    "cpu": [
+        {
+            "environment": "bare-metal",
+            "cores": 1,
+            "latency": 18.67,
+            "throughput": 53.53,
+            "overheads": 99
+        },
+        {
+            "environment": "bare-metal",
+            "cores": 2,
+            "latency": 19.56,
+            "throughput": 102.21,
+            "overheads": 100
+        },
+        {
+            "environment": "bare-metal",
+            "cores": 4,
+            "latency": 19.45,
+            "throughput": 205.48,
+            "overheads": 100
+        },
+        {
+            "environment": "bare-metal",
+            "cores": 8,
+            "latency": 20.04,
+            "throughput": 398.71,
+            "overheads": 99
+        },
+        {
+            "environment": "bare-metal",
+            "cores": 16,
+            "latency": 20.43,
+            "throughput": 782.38,
+            "overheads": 100
+        },
+        {
+            "environment": "bare-metal",
+            "cores": 32,
+            "latency": 23.48,
+            "throughput": 1360.52,
+            "overheads": 99
+        },
+        {
+            "environment": "container",
+            "cores": 1,
+            "latency": 18.66,
+            "throughput": 53.55,
+            "overheads": 100
+        },
+        {
+            "environment": "container",
+            "cores": 2,
+            "latency": 19.67,
+            "throughput": 101.61,
+            "overheads": 99
+        },
+        {
+            "environment": "container",
+            "cores": 4,
+            "latency": 19.45,
+            "throughput": 205.47,
+            "overheads": 99
+        },
+        {
+            "environment": "container",
+            "cores": 8,
+            "latency": 19.99,
+            "throughput": 399.89,
+            "overheads": 100
+        },
+        {
+            "environment": "container",
+            "cores": 16,
+            "latency": 20.56,
+            "throughput": 776.85,
+            "overheads": 99
+        },
+        {
+            "environment": "container",
+            "cores": 32,
+            "latency": 23.47,
+            "throughput": 1361.33,
+            "overheads": 100
+        },
+        {
+            "environment": "vm",
+            "cores": 1,
+            "latency": 18.87,
+            "throughput": 52.91,
+            "overheads": 98
+        },
+        {
+            "environment": "vm",
+            "cores": 2,
+            "latency": 19.83,
+            "throughput": 100.76,
+            "overheads": 98
+        },
+        {
+            "environment": "vm",
+            "cores": 4,
+            "latency": 19.61,
+            "throughput": 203.75,
+            "overheads": 99
+        },
+        {
+            "environment": "vm",
+            "cores": 8,
+            "latency": 20.15,
+            "throughput": 396.40,
+            "overheads": 99
+        },
+        {
+            "environment": "vm",
+            "cores": 16,
+            "latency": 20.79,
+            "throughput": 768.50,
+            "overheads": 98
+        },
+        {
+            "environment": "vm",
+            "cores": 32,
+            "latency": 23.59,
+            "throughput": 1354.59,
+            "overheads": 99
+        }
+    ],
+    "memory": [
+        {
+            "environment": "bare-metal",
+            "size": 1,
+            "operations": 22906443,
+            "throughput": 22369.57,
+            "efficiency": 99
+        },
+        {
+            "environment": "bare-metal",
+            "size": 2,
+            "operations": 44027063,
+            "throughput": 42995.18,
+            "efficiency": 100
+        },
+        {
+            "environment": "bare-metal",
+            "size": 4,
+            "operations": 77378502,
+            "throughput": 75564.94,
+            "efficiency": 100
+        },
+        {
+            "environment": "bare-metal",
+            "size": 8,
+            "operations": 125829120,
+            "throughput": 122880.0,
+            "efficiency": 100
+        },
+        {
+            "environment": "bare-metal",
+            "size": 16,
+            "operations": 125829120,
+            "throughput": 122880.0,
+            "efficiency": 100
+        },
+        {
+            "environment": "bare-metal",
+            "size": 32,
+            "operations": 125829120,
+            "throughput": 122880.0,
+            "efficiency": 100
+        },
+        {
+            "environment": "container",
+            "size": 1,
+            "operations": 22936241,
+            "throughput": 22398.67,
+            "efficiency": 100
+        },
+        {
+            "environment": "container",
+            "size": 2,
+            "operations": 39730396,
+            "throughput": 38799.21,
+            "efficiency": 90
+        },
+        {
+            "environment": "container",
+            "size": 4,
+            "operations": 77242347,
+            "throughput": 75431.98,
+            "efficiency": 99
+        },
+        {
+            "environment": "container",
+            "size": 8,
+            "operations": 125829120,
+            "throughput": 122880.0,
+            "efficiency": 100
+        },
+        {
+            "environment": "container",
+            "size": 16,
+            "operations": 125829120,
+            "throughput": 122880.0,
+            "efficiency": 100
+        },
+        {
+            "environment": "container",
+            "size": 32,
+            "operations": 125829120,
+            "throughput": 122880.0,
+            "efficiency": 100
+        },
+        {
+            "environment": "vm",
+            "size": 1,
+            "operations": 21749419,
+            "throughput": 21239.67,
+            "efficiency": 94
+        },
+        {
+            "environment": "vm",
+            "size": 2,
+            "operations": 38151830,
+            "throughput": 37257.65,
+            "efficiency": 86
+        },
+        {
+            "environment": "vm",
+            "size": 4,
+            "operations": 73990094,
+            "throughput": 72255.95,
+            "efficiency": 95
+        },
+        {
+            "environment": "vm",
+            "size": 8,
+            "operations": 125829120,
+            "throughput": 122880.0,
+            "efficiency": 100
+        },
+        {
+            "environment": "vm",
+            "size": 16,
+            "operations": 125829120,
+            "throughput": 122880.0,
+            "efficiency": 100
+        },
+        {
+            "environment": "vm",
+            "size": 32,
+            "operations": 125829120,
+            "throughput": 122880.0,
+            "efficiency": 100
+        }
+    ],
+    "disk": [
+        {
+            "environment": "bare-metal",
+            "size": 1,
+            "operations": 93354,
+            "throughput": 36.45,
+            "efficiency": 20
+        },
+        {
+            "environment": "bare-metal",
+            "size": 2,
+            "operations": 170568,
+            "throughput": 66.59,
+            "efficiency": 19
+        },
+        {
+            "environment": "bare-metal",
+            "size": 4,
+            "operations": 322679,
+            "throughput": 125.98,
+            "efficiency": 21
+        },
+        {
+            "environment": "bare-metal",
+            "size": 8,
+            "operations": 531908,
+            "throughput": 207.66,
+            "efficiency": 18
+        },
+        {
+            "environment": "bare-metal",
+            "size": 16,
+            "operations": 676642,
+            "throughput": 264.26,
+            "efficiency": 14
+        },
+        {
+            "environment": "bare-metal",
+            "size": 32,
+            "operations": 851575,
+            "throughput": 332.58,
+            "efficiency": 15
+        },
+        {
+            "environment": "container",
+            "size": 1,
+            "operations": 454448,
+            "throughput": 177.42,
+            "efficiency": 100
+        },
+        {
+            "environment": "container",
+            "size": 2,
+            "operations": 876696,
+            "throughput": 342.27,
+            "efficiency": 100
+        },
+        {
+            "environment": "container",
+            "size": 4,
+            "operations": 1503781,
+            "throughput": 587.1,
+            "efficiency": 100
+        },
+        {
+            "environment": "container",
+            "size": 8,
+            "operations": 2874140,
+            "throughput": 1122.52,
+            "efficiency": 100
+        },
+        {
+            "environment": "container",
+            "size": 16,
+            "operations": 4569054,
+            "throughput": 1784.47,
+            "efficiency": 100
+        },
+        {
+            "environment": "container",
+            "size": 32,
+            "operations": 5384094,
+            "throughput": 2102.76,
+            "efficiency": 100
+        },
+        {
+            "environment": "vm",
+            "size": 1,
+            "operations": 133847,
+            "throughput": 52.24,
+            "efficiency": 29
+        },
+        {
+            "environment": "vm",
+            "size": 2,
+            "operations": 276151,
+            "throughput": 107.8,
+            "efficiency": 31
+        },
+        {
+            "environment": "vm",
+            "size": 4,
+            "operations": 546511,
+            "throughput": 213.29,
+            "efficiency": 36
+        },
+        {
+            "environment": "vm",
+            "size": 8,
+            "operations": 763809,
+            "throughput": 298.17,
+            "efficiency": 26
+        },
+        {
+            "environment": "vm",
+            "size": 16,
+            "operations": 872563,
+            "throughput": 340.69,
+            "efficiency": 19
+        },
+        {
+            "environment": "vm",
+            "size": 32,
+            "operations": 738303,
+            "throughput": 288.2,
+            "efficiency": 13
+        }
+    ],
+    "network": [
+        {
+            "environment": "bare-metal",
+            "connections": 1,
+            "operations": 34.4,
+            "throughput": 29.5,
+            "efficiency": 89
+        },
+        {
+            "environment": "bare-metal",
+            "connections": 2,
+            "operations": 65.3,
+            "throughput": 56.0,
+            "efficiency": 90
+        },
+        {
+            "environment": "bare-metal",
+            "connections": 4,
+            "operations": 119.0,
+            "throughput": 102.0,
+            "efficiency": 90
+        },
+        {
+            "environment": "bare-metal",
+            "connections": 8,
+            "operations": 212.0,
+            "throughput": 182.0,
+            "efficiency": 95
+        },
+        {
+            "environment": "bare-metal",
+            "connections": 16,
+            "operations": 313.0,
+            "throughput": 268.0,
+            "efficiency": 100
+        },
+        {
+            "environment": "bare-metal",
+            "connections": 32,
+            "operations": 395.0,
+            "throughput": 339.0,
+            "efficiency": 100
+        },
+        {
+            "environment": "container",
+            "connections": 1,
+            "operations": 38.3,
+            "throughput": 33.3,
+            "efficiency": 100
+        },
+        {
+            "environment": "container",
+            "connections": 2,
+            "operations": 72.4,
+            "throughput": 62.1,
+            "efficiency": 100
+        },
+        {
+            "environment": "container",
+            "connections": 4,
+            "operations": 132.0,
+            "throughput": 113.0,
+            "efficiency": 100
+        },
+        {
+            "environment": "container",
+            "connections": 8,
+            "operations": 221.0,
+            "throughput": 190.0,
+            "efficiency": 100
+        },
+        {
+            "environment": "container",
+            "connections": 16,
+            "operations": 298.0,
+            "throughput": 255.0,
+            "efficiency": 95
+        },
+        {
+            "environment": "container",
+            "connections": 32,
+            "operations": 379.0,
+            "throughput": 324.0,
+            "efficiency": 95
+        },
+        {
+            "environment": "vm",
+            "connections": 1,
+            "operations": 34.0,
+            "throughput": 29.2,
+            "efficiency": 88
+        },
+        {
+            "environment": "vm",
+            "connections": 2,
+            "operations": 50.9,
+            "throughput": 43.6,
+            "efficiency": 70
+        },
+        {
+            "environment": "vm",
+            "connections": 4,
+            "operations": 89.8,
+            "throughput": 76.9,
+            "efficiency": 68
+        },
+        {
+            "environment": "vm",
+            "connections": 8,
+            "operations": 166.0,
+            "throughput": 142.0,
+            "efficiency": 74
+        },
+        {
+            "environment": "vm",
+            "connections": 16,
+            "operations": 270.0,
+            "throughput": 231.0,
+            "efficiency": 86
+        },
+        {
+            "environment": "vm",
+            "connections": 32,
+            "operations": 324.0,
+            "throughput": 278.0,
+            "efficiency": 82
+        }
+    ]
 }

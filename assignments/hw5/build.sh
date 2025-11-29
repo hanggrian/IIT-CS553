@@ -2,7 +2,7 @@
 
 source _lib.sh
 
-./gradlew clean build || die 'Build failed.'
+./gradlew shadowJar || die 'Build failed.'
 
 echo
 echo 'Goodbye!'

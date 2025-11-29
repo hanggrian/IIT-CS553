@@ -11,14 +11,11 @@ allprojects {
 
 plugins {
     java
-    application
     checkstyle
-    jacoco
+    alias(libs.plugins.shadow)
 }
 
 java.toolchain.languageVersion.set(javaCompileVersion)
-
-application.mainClass.set("$releaseGroup.App")
 
 checkstyle.toolVersion = libs.versions.checkstyle.get()
 
@@ -43,7 +40,8 @@ tasks {
     test {
         useJUnitPlatform()
     }
-    jar {
-        archiveFileName = "hashgen.jar"
+    shadowJar {
+        archiveFileName.set("hashgen.jar")
+        isZip64 = true
     }
 }

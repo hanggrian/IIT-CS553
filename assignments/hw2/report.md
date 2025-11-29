@@ -106,8 +106,8 @@ seconds slower in latency compared to others.
 
 <img
   width="640px"
-  alt="Figure 1"
-  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/figure1.svg">
+  alt="Diagram 1"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/diagram1.svg">
 
 Virtualization type | Threads | Avg. latency | Measured throughput | Overheads
 --- | ---: | ---: | ---: | ---:
@@ -163,8 +163,8 @@ instances seem to peak at 8 threads despite having a total of 32 available.
 
 <img
   width="640px"
-  alt="Figure 2"
-  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/figure2.svg">
+  alt="Diagram 2"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/diagram2.svg">
 
 Virtualization type | Threads | Total operations | Throughput | Efficiency
 --- | ---: | ---: | ---: | ---:
@@ -225,8 +225,8 @@ could not explain why VMs perform better than bare-metal.
 
 <img
   width="640px"
-  alt="Figure 3"
-  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/figure3.svg">
+  alt="Diagram 3"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/diagram3.svg">
 
 Virtualization type | Threads | Total operations | Throughput | Efficiency
 --- | ---: | ---: | ---: | ---:
@@ -292,8 +292,8 @@ is the worst.
 
 <img
   width="640px"
-  alt="Figure 4"
-  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/figure4.svg">
+  alt="Diagram 4"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw2/diagram4.svg">
 
 Virtualization type | Threads | Total operations | Measured throughput | Efficiency
 --- | ---: | ---: | ---: | ---:

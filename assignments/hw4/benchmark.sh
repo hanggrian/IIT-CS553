@@ -14,9 +14,9 @@ prompt_yn() {
   while true; do
     read -r -p "$1 (y/n)? " yn
     case $yn in
-        [Yy]*) return 0;;
-        [Nn]*) return 1;;
-        *) warn 'Unknown input.';;
+      [Yy]*) return 0;;
+      [Nn]*) return 1;;
+      *) warn 'Unknown input.';;
     esac
   done
 }

@@ -1,0 +1,36 @@
+root@large1:~/IIT-CS553/assignments/hw5# cat vaultx64GB.log
+Selected Approach           : for
+Number of Threads           : 32
+Exponent K                  : 32
+File Size (GB)              : 63.00
+File Size (bytes)           : 67645734912
+Memory Size (MB)            : 10752
+Memory Size (bytes)         : 11274289152
+Number of Hashes (RAM)      : 704643072
+Number of Hashes (Disk)     : 4227858432
+Size of HASH                : 10
+Size of NONCE               : 6
+Size of MemoRecord          : 16
+Rounds                      : 6
+Number of Buckets           : 16777216
+Number of Records in Bucket : 42
+BATCH_SIZE                  : 1024
+Temporary File              : data64GB.tmp
+Final Output File           : data64GB.bin
+[38.10] HashGen 16.67%: 18.63 MH/s : I/O 106.59 MB/s
+[76.12] HashGen 33.33%: 18.53 MH/s : I/O 106.03 MB/s
+[110.01] HashGen 50.00%: 20.79 MH/s : I/O 118.98 MB/s
+[145.75] HashGen 66.67%: 19.72 MH/s : I/O 112.83 MB/s
+[179.16] HashGen 83.33%: 21.09 MH/s : I/O 120.68 MB/s
+[214.67] HashGen 100.00%: 19.84 MH/s : I/O 113.54 MB/s
+[279.04] Shuffle 0.00%: 47.78 MB/s
+[332.13] Shuffle 12.50%: 56.95 MB/s
+[384.90] Shuffle 25.00%: 57.31 MB/s
+[438.97] Shuffle 37.50%: 55.92 MB/s
+[493.01] Shuffle 50.00%: 55.96 MB/s
+[546.72] Shuffle 62.50%: 56.30 MB/s
+[601.49] Shuffle 75.00%: 55.22 MB/s
+[655.30] Shuffle 87.50%: 56.20 MB/s
+File 'data64GB.tmp' removed successfully.
+Total Throughput: 6.41 MH/s  97.75 MB/s
+Total Time: 659.989496 seconds

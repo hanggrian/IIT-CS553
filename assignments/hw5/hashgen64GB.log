@@ -1,0 +1,20 @@
+root@large1:~/IIT-CS553/assignments/hw4/build# cat hashgen64GB.log
+Selected approach:          for
+Number of threads:          32
+IO threads:                 1
+Memory (MB):                12288
+Parsed k:                   32
+Size of HASH:               6
+Size of NONCE:              10
+Computed total records:     4294967296 (total bytes = 68719476736)
+Chunk records (per sorted): 805306368
+Number of chunks:           6
+Generating... 18.75%
+Generating... 37.5%
+Generating... 56.25%
+Generating... 75%
+Generating... 93.75%
+Generating... 100%
+Merging 6 chunks into data64GB.bin...
+Total throughput:           4.92791 MH/s 75.1939 MB/s
+Total time:                 871.56 seconds

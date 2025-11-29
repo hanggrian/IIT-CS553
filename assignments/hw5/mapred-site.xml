@@ -5,4 +5,23 @@
     <name>mapreduce.framework.name</name>
     <value>yarn</value>
   </property>
+
+  <!-- small worker -->
+  <property>
+    <name>mapreduce.map.memory.mb</name>
+    <value>1536</value>
+  </property>
+  <property>
+    <name>mapreduce.reduce.memory.mb</name>
+    <value>1536</value>
+  </property>
+  <!-- large worker -->
+  <!--property>
+    <name>mapreduce.map.memory.mb</name>
+    <value>12288</value>
+  </property>
+  <property>
+    <name>mapreduce.reduce.memory.mb</name>
+    <value>12288</value>
+  </property-->
 </configuration>

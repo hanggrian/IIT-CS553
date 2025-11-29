@@ -1,7 +1,7 @@
 package edu.illinoistech.hawk.hwijaya;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import org.apache.hadoop.io.BytesWritable;
@@ -9,7 +9,6 @@ import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.storage.StorageLevel;
 import scala.Tuple2;
 
 public class SparkVault {
@@ -23,41 +22,45 @@ public class SparkVault {
         long totalRecords = Long.parseLong(args[1]);
         int parallelism = Integer.parseInt(args[2]);
 
-        SparkConf conf =
-            new SparkConf()
-                .setAppName("SparkVault")
-                .set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
-                .set("spark.kryo.registrationRequired", "false")
-                .set("spark.kryoserializer.buffer.max", "512m")
-                .set("spark.hadoop.mapreduce.output.fileoutputformat.compress", "false");
-
-        try (JavaSparkContext context = new JavaSparkContext(conf)) {
+        try (JavaSparkContext context =
+                 new JavaSparkContext(
+                     new SparkConf()
+                         .setAppName("SparkVault")
+                         .set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
+                         .set("spark.kryo.registrationRequired", "false")
+                         .set("spark.kryoserializer.buffer.max", "512m")
+                         .set("spark.hadoop.mapreduce.output.fileoutputformat.compress", "false"
+                     )
+                 )
+        ) {
             long startTime = System.currentTimeMillis();
-            context
-                .parallelize(
+            context.parallelize(
                     IntStream.range(0, parallelism).boxed().collect(Collectors.toList()),
                     parallelism
-                ).mapPartitions(iterator -> {
-                    long recordsPerPartition = totalRecords / parallelism;
+                )
+                .mapPartitions(partitionIterator -> {
+                    if (!partitionIterator.hasNext()) {
+                        return Collections.emptyIterator();
+                    }
+                    int idx = partitionIterator.next();
+                    long base = totalRecords / parallelism;
                     long remainder = totalRecords % parallelism;
+                    long recordsToGenerate = base + (idx < remainder ? 1 : 0);
+                    return new Iterator<byte[]>() {
+                        long remaining = recordsToGenerate;
 
-                    int partitionIndex = 0;
-                    if (iterator.hasNext()) {
-                        partitionIndex = iterator.next();
-                    }
+                        @Override
+                        public boolean hasNext() {
+                            return remaining > 0;
+                        }
 
-                    long recordsToGenerate = recordsPerPartition;
-                    if (partitionIndex < remainder) {
-                        recordsToGenerate++;
-                    }
-
-                    List<byte[]> records = new ArrayList<>((int) recordsToGenerate);
-                    for (long i = 0; i < recordsToGenerate; i++) {
-                        records.add(Hashes.generate());
-                    }
-
-                    return records.iterator();
-                }).persist(StorageLevel.MEMORY_AND_DISK_SER())
+                        @Override
+                        public byte[] next() {
+                            remaining--;
+                            return Hashes.generate();
+                        }
+                    };
+                })
                 .mapToPair(record -> {
                     BytesWritable bw = new BytesWritable();
                     bw.set(record, 0, Hashes.RECORD_BYTES);

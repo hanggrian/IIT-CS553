@@ -69,3 +69,52 @@ Replace the line `ssh localhost` in your `setup.sh` with the following command:
 ```sh
 ssh -o StrictHostKeyChecking=no localhost true
 ```
+
+### Prompt 3
+
+> I couldn't get DNS to work on my LXC containers in a Chameleon Cloud
+  environment. On my host OS, I observed that MASQUERADE rule has 0 packets.
+
+Check for additional iptables rules on the host:
+
+```sh
+sudo iptables -L -n -v --line-numbers
+
+# Check if there are rules in other tables
+sudo iptables -t mangle -L -n -v
+sudo iptables -t raw -L -n -v
+
+# Check nftables (newer firewall system)
+sudo nft list ruleset
+```
+
+Also check if firewalld or ufw is running:
+
+```sh
+sudo systemctl status firewalld
+sudo systemctl status ufw
+sudo ufw status
+```
+
+If firewalld or ufw is active, they're likely blocking the traffic. The fix:
+
+```sh
+# If ufw is active
+sudo ufw allow from $GUEST_IP/24
+sudo ufw reload
+
+# If firewalld is active
+sudo firewall-cmd --permanent --zone=trusted --add-source=$GUEST_IP/24
+sudo firewall-cmd --reload
+```
+
+Or, if you don't need these firewalls:
+
+```sh
+sudo systemctl stop ufw
+sudo systemctl disable ufw
+
+# OR
+sudo systemctl stop firewalld
+sudo systemctl disable firewalld
+```

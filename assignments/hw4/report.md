@@ -309,13 +309,13 @@ Threads | Memory size | 1 IO threads (MH/s)
 
 <img
   width="640px"
-  alt="Figure 1"
-  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/figure1.svg">
+  alt="Diagram 1"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/diagram1.svg">
 
 <img
   width="640px"
-  alt="Figure 2"
-  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/figure2.svg">
+  alt="Diagram 2"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/diagram2.svg">
 
 ## Problem 4
 
@@ -339,16 +339,16 @@ amount of data that can be buffered before writing to disk.
 
 <img
   width="640px"
-  alt="Figure 3"
-  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/figure3.svg">
+  alt="Diagram 3"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw4/diagram3.svg">
 
-K | Difficulty | Number of searches | Average number of disk seek per search | Average data read per search (bytes) | Total time for all searches | Time / search (ms) | Number of searches found | Number of searches not found
----: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---:
-26 | 3 | 1,000 | 1 | 4,096 | 1.83521 | 0.00183 | 1,000 | 0
-26 | 4 | 1,000 | 1 | 4,096 | 2.16235 | 0.00216 | 0 | 1,000
-26 | 5 | 1,000 | 1 | 4,096 | 2.17494 | 0.00217 | 0 | 1,000
-32 | 3 | 1,000 | 1 | 4,096 | 1.86285 | 0.00186 | 1,000 | 0
-32 | 4 | 1,000 | 1 | 4,096 | 1.87287 | 0.00187 | 0 | 1,000
-32 | 5 | 1,000 | 1 | 4,096 | 1.86923 | 0.00186 | 0 | 1,000
+K | Difficulty | Number of searches | Average number of disk seek per search | Average data read per search (bytes) | Total time for all searches | Time / search (ms) | Throughput | Number of searches found | Number of searches not found
+---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---:
+26 | 3 | 1,000 | 1 | 4,096 | 1.83521 | 0.00183 | 545.1 | 1,000 | 0
+26 | 4 | 1,000 | 1 | 4,096 | 2.16235 | 0.00216 | 462.7 | 0 | 1,000
+26 | 5 | 1,000 | 1 | 4,096 | 2.17494 | 0.00217 | 460.1 | 0 | 1,000
+32 | 3 | 1,000 | 1 | 4,096 | 1.86285 | 0.00186 | 537.6 | 1,000 | 0
+32 | 4 | 1,000 | 1 | 4,096 | 1.87287 | 0.00187 | 534.1 | 0 | 1,000
+32 | 5 | 1,000 | 1 | 4,096 | 1.86923 | 0.00186 | 535.1 | 0 | 1,000
 
 [Blake3]: https://github.com/BLAKE3-team/BLAKE3

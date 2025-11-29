@@ -1,25 +1,44 @@
-{
-  "24": {
-    "1024": {
-      "1": 7.14540
-    },
-    "2048": {
-      "1": 7.92516
-    },
-    "4096": {
-      "1": 8.63750
-    },
-    "8192": {
-      "1": 9.38243
-    },
-    "16384": {
-      "1": 9.90971
-    },
-    "32768": {
-      "1": 9.99402
-    },
-    "65536": {
-      "1": 7.90725
-    }
+[
+  {
+    "threads": 24,
+    "io_threads": 1,
+    "memory": 1024,
+    "throughput": 7.14540
+  },
+  {
+    "threads": 24,
+    "io_threads": 1,
+    "memory": 2048,
+    "throughput": 7.92516
+  },
+  {
+    "threads": 24,
+    "io_threads": 1,
+    "memory": 4096,
+    "throughput": 8.63750
+  },
+  {
+    "threads": 24,
+    "io_threads": 1,
+    "memory": 8192,
+    "throughput": 9.38243
+  },
+  {
+    "threads": 24,
+    "io_threads": 1,
+    "memory": 16384,
+    "throughput": 9.90971
+  },
+  {
+    "threads": 24,
+    "io_threads": 1,
+    "memory": 32768,
+    "throughput": 9.99402
+  },
+  {
+    "threads": 24,
+    "io_threads": 1,
+    "memory": 65536,
+    "throughput": 7.90725
   }
-}
+]

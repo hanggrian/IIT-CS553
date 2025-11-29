@@ -20,10 +20,10 @@ time spark-submit \
   --master yarn \
   --deploy-mode cluster \
   --num-executors 1 \
-  --executor-cores 1 \
-  --executor-memory 1g \
+  --executor-cores 2 \
+  --executor-memory 1536m \
   "$JAR_FILE" \
-  "hdfs://$OUTPUT_DIR" \
-  1048576 \
-  4 \
+  "$OUTPUT_DIR" \
+  4096 \
+  2 \
   2>&1 | tee spark.log

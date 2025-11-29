@@ -1,121 +1,380 @@
-{
-  "1": {
-    "256": {
-      "1": 4.70642,
-      "2": 4.58874,
-      "4": 5.01103
-    },
-    "512": {
-      "1": 5.06895,
-      "2": 5.07055,
-      "4": 4.96701
-    },
-    "1024": {
-      "1": 5.11752,
-      "2": 5.14437,
-      "4": 5.14633
-    }
+[
+  {
+    "threads": 1,
+    "memory": 256,
+    "io_threads": 1,
+    "throughput": 4.70642
   },
-  "2": {
-    "256": {
-      "1": 5.80156,
-      "2": 5.83668,
-      "4": 5.86966
-    },
-    "512": {
-      "1": 6.47532,
-      "2": 6.52293,
-      "4": 6.41774
-    },
-    "1024": {
-      "1": 6.68696,
-      "2": 6.75846,
-      "4": 6.66097
-    }
+  {
+    "threads": 1,
+    "memory": 256,
+    "io_threads": 2,
+    "throughput": 4.58874
   },
-  "4": {
-    "256": {
-      "1": 7.42224,
-      "2": 6.26674,
-      "4": 6.26236
-    },
-    "512": {
-      "1": 7.46685,
-      "2": 7.53278,
-      "4": 7.25330
-    },
-    "1024": {
-      "1": 7.08692,
-      "2": 7.08101,
-      "4": 7.01328
-    }
+  {
+    "threads": 1,
+    "memory": 256,
+    "io_threads": 4,
+    "throughput": 5.01103
   },
-  "8": {
-    "256": {
-      "1": 7.28460,
-      "2": 7.30864,
-      "4": 7.27058
-    },
-    "512": {
-      "1": 10.79820,
-      "2": 8.23176,
-      "4": 8.21978
-    },
-    "1024": {
-      "1": 7.91785,
-      "2": 7.75438,
-      "4": 8.84303
-    }
+  {
+    "threads": 1,
+    "memory": 512,
+    "io_threads": 1,
+    "throughput": 5.06895
   },
-  "12": {
-    "256": {
-      "1": 9.30797,
-      "2": 7.38320,
-      "4": 7.34609
-    },
-    "512": {
-      "1": 8.55917,
-      "2": 11.01410,
-      "4": 8.49093
-    },
-    "1024": {
-      "1": 9.13278,
-      "2": 8.81494,
-      "4": 8.96643
-    }
+  {
+    "threads": 1,
+    "memory": 512,
+    "io_threads": 2,
+    "throughput": 5.07055
   },
-  "24": {
-    "256": {
-      "1": 7.61887,
-      "2": 7.68504,
-      "4": 7.64386
-    },
-    "512": {
-      "1": 9.32281,
-      "2": 8.67591,
-      "4": 8.86775
-    },
-    "1024": {
-      "1": 9.31559,
-      "2": 9.54625,
-      "4": 9.43943
-    }
+  {
+    "threads": 1,
+    "memory": 512,
+    "io_threads": 4,
+    "throughput": 4.96701
   },
-  "48": {
-    "256": {
-      "1": 7.79639,
-      "2": 7.62827,
-      "4": 7.66559
-    },
-    "512": {
-      "1": 8.94213,
-      "2": 8.94200,
-      "4": 8.93600
-    },
-    "1024": {
-      "1": 9.70507,
-      "2": 11.37100,
-      "4": 9.46415
-    }
+  {
+    "threads": 1,
+    "memory": 1024,
+    "io_threads": 1,
+    "throughput": 5.11752
+  },
+  {
+    "threads": 1,
+    "memory": 1024,
+    "io_threads": 2,
+    "throughput": 5.14437
+  },
+  {
+    "threads": 1,
+    "memory": 1024,
+    "io_threads": 4,
+    "throughput": 5.14633
+  },
+  {
+    "threads": 2,
+    "memory": 256,
+    "io_threads": 1,
+    "throughput": 5.80156
+  },
+  {
+    "threads": 2,
+    "memory": 256,
+    "io_threads": 2,
+    "throughput": 5.83668
+  },
+  {
+    "threads": 2,
+    "memory": 256,
+    "io_threads": 4,
+    "throughput": 5.86966
+  },
+  {
+    "threads": 2,
+    "memory": 512,
+    "io_threads": 1,
+    "throughput": 6.47532
+  },
+  {
+    "threads": 2,
+    "memory": 512,
+    "io_threads": 2,
+    "throughput": 6.52293
+  },
+  {
+    "threads": 2,
+    "memory": 512,
+    "io_threads": 4,
+    "throughput": 6.41774
+  },
+  {
+    "threads": 2,
+    "memory": 1024,
+    "io_threads": 1,
+    "throughput": 6.68696
+  },
+  {
+    "threads": 2,
+    "memory": 1024,
+    "io_threads": 2,
+    "throughput": 6.75846
+  },
+  {
+    "threads": 2,
+    "memory": 1024,
+    "io_threads": 4,
+    "throughput": 6.66097
+  },
+  {
+    "threads": 4,
+    "memory": 256,
+    "io_threads": 1,
+    "throughput": 7.42224
+  },
+  {
+    "threads": 4,
+    "memory": 256,
+    "io_threads": 2,
+    "throughput": 6.26674
+  },
+  {
+    "threads": 4,
+    "memory": 256,
+    "io_threads": 4,
+    "throughput": 6.26236
+  },
+  {
+    "threads": 4,
+    "memory": 512,
+    "io_threads": 1,
+    "throughput": 7.46685
+  },
+  {
+    "threads": 4,
+    "memory": 512,
+    "io_threads": 2,
+    "throughput": 7.53278
+  },
+  {
+    "threads": 4,
+    "memory": 512,
+    "io_threads": 4,
+    "throughput": 7.25330
+  },
+  {
+    "threads": 4,
+    "memory": 1024,
+    "io_threads": 1,
+    "throughput": 7.08692
+  },
+  {
+    "threads": 4,
+    "memory": 1024,
+    "io_threads": 2,
+    "throughput": 7.08101
+  },
+  {
+    "threads": 4,
+    "memory": 1024,
+    "io_threads": 4,
+    "throughput": 7.01328
+  },
+  {
+    "threads": 8,
+    "memory": 256,
+    "io_threads": 1,
+    "throughput": 7.28460
+  },
+  {
+    "threads": 8,
+    "memory": 256,
+    "io_threads": 2,
+    "throughput": 7.30864
+  },
+  {
+    "threads": 8,
+    "memory": 256,
+    "io_threads": 4,
+    "throughput": 7.27058
+  },
+  {
+    "threads": 8,
+    "memory": 512,
+    "io_threads": 1,
+    "throughput": 10.79820
+  },
+  {
+    "threads": 8,
+    "memory": 512,
+    "io_threads": 2,
+    "throughput": 8.23176
+  },
+  {
+    "threads": 8,
+    "memory": 512,
+    "io_threads": 4,
+    "throughput": 8.21978
+  },
+  {
+    "threads": 8,
+    "memory": 1024,
+    "io_threads": 1,
+    "throughput": 7.91785
+  },
+  {
+    "threads": 8,
+    "memory": 1024,
+    "io_threads": 2,
+    "throughput": 7.75438
+  },
+  {
+    "threads": 8,
+    "memory": 1024,
+    "io_threads": 4,
+    "throughput": 8.84303
+  },
+  {
+    "threads": 12,
+    "memory": 256,
+    "io_threads": 1,
+    "throughput": 9.30797
+  },
+  {
+    "threads": 12,
+    "memory": 256,
+    "io_threads": 2,
+    "throughput": 7.38320
+  },
+  {
+    "threads": 12,
+    "memory": 256,
+    "io_threads": 4,
+    "throughput": 7.34609
+  },
+  {
+    "threads": 12,
+    "memory": 512,
+    "io_threads": 1,
+    "throughput": 8.55917
+  },
+  {
+    "threads": 12,
+    "memory": 512,
+    "io_threads": 2,
+    "throughput": 11.01410
+  },
+  {
+    "threads": 12,
+    "memory": 512,
+    "io_threads": 4,
+    "throughput": 8.49093
+  },
+  {
+    "threads": 12,
+    "memory": 1024,
+    "io_threads": 1,
+    "throughput": 9.13278
+  },
+  {
+    "threads": 12,
+    "memory": 1024,
+    "io_threads": 2,
+    "throughput": 8.81494
+  },
+  {
+    "threads": 12,
+    "memory": 1024,
+    "io_threads": 4,
+    "throughput": 8.96643
+  },
+  {
+    "threads": 24,
+    "memory": 256,
+    "io_threads": 1,
+    "throughput": 7.61887
+  },
+  {
+    "threads": 24,
+    "memory": 256,
+    "io_threads": 2,
+    "throughput": 7.68504
+  },
+  {
+    "threads": 24,
+    "memory": 256,
+    "io_threads": 4,
+    "throughput": 7.64386
+  },
+  {
+    "threads": 24,
+    "memory": 512,
+    "io_threads": 1,
+    "throughput": 9.32281
+  },
+  {
+    "threads": 24,
+    "memory": 512,
+    "io_threads": 2,
+    "throughput": 8.67591
+  },
+  {
+    "threads": 24,
+    "memory": 512,
+    "io_threads": 4,
+    "throughput": 8.86775
+  },
+  {
+    "threads": 24,
+    "memory": 1024,
+    "io_threads": 1,
+    "throughput": 9.31559
+  },
+  {
+    "threads": 24,
+    "memory": 1024,
+    "io_threads": 2,
+    "throughput": 9.54625
+  },
+  {
+    "threads": 24,
+    "memory": 1024,
+    "io_threads": 4,
+    "throughput": 9.43943
+  },
+  {
+    "threads": 48,
+    "memory": 256,
+    "io_threads": 1,
+    "throughput": 7.79639
+  },
+  {
+    "threads": 48,
+    "memory": 256,
+    "io_threads": 2,
+    "throughput": 7.62827
+  },
+  {
+    "threads": 48,
+    "memory": 256,
+    "io_threads": 4,
+    "throughput": 7.66559
+  },
+  {
+    "threads": 48,
+    "memory": 512,
+    "io_threads": 1,
+    "throughput": 8.94213
+  },
+  {
+    "threads": 48,
+    "memory": 512,
+    "io_threads": 2,
+    "throughput": 8.94200
+  },
+  {
+    "threads": 48,
+    "memory": 512,
+    "io_threads": 4,
+    "throughput": 8.93600
+  },
+  {
+    "threads": 48,
+    "memory": 1024,
+    "io_threads": 1,
+    "throughput": 9.70507
+  },
+  {
+    "threads": 48,
+    "memory": 1024,
+    "io_threads": 2,
+    "throughput": 11.37100
+  },
+  {
+    "threads": 48,
+    "memory": 1024,
+    "io_threads": 4,
+    "throughput": 9.46415
   }
-}
+]

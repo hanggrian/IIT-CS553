@@ -1,54 +1,68 @@
-{
-  "26": {
-    "3": {
-      "Average number of disk seek per search": 1,
-      "Average data read per search": 4096,
-      "Total time for all searches": 1.83521,
-      "Time / search": 0.00183,
-      "Number of searches found": 1000,
-      "Number of searches not found": 0
-    },
-    "4": {
-      "Average number of disk seek per search": 1,
-      "Average data read per search": 4096,
-      "Total time for all searches": 2.16235,
-      "Time / search": 0.00216,
-      "Number of searches found": 0,
-      "Number of searches not found": 1000
-    },
-    "5": {
-      "Average number of disk seek per search": 1,
-      "Average data read per search": 4096,
-      "Total time for all searches": 2.17494,
-      "Time / search": 0.00217,
-      "Number of searches found": 0,
-      "Number of searches not found": 1000
-    }
+[
+  {
+    "k": 26,
+    "difficulty": 3,
+    "Average number of disk seek per search": 1,
+    "Average data read per search": 4096,
+    "total_time": 1.83521,
+    "time_per_search": 0.00183,
+    "throughput": 545.2,
+    "searches_found": 1000,
+    "searches_not_found": 0
   },
-  "32": {
-    "3": {
-      "Average number of disk seek per search": 1,
-      "Average data read per search": 4096,
-      "Total time for all searches": 1.86285,
-      "Time / search": 0.00186,
-      "Number of searches found": 1000,
-      "Number of searches not found": 0
-    },
-    "4": {
-      "Average number of disk seek per search": 1,
-      "Average data read per search": 4096,
-      "Total time for all searches": 1.87287,
-      "Time / search": 0.00187,
-      "Number of searches found": 0,
-      "Number of searches not found": 1000
-    },
-    "5": {
-      "Average number of disk seek per search": 1,
-      "Average data read per search": 4096,
-      "Total time for all searches": 1.86923,
-      "Time / search": 0.00186,
-      "Number of searches found": 0,
-      "Number of searches not found": 1000
-    }
+  {
+    "k": 26,
+    "difficulty": 4,
+    "Average number of disk seek per search": 1,
+    "Average data read per search": 4096,
+    "total_time": 2.16235,
+    "time_per_search": 0.00216,
+    "throughput": 462.5,
+    "searches_found": 0,
+    "searches_not_found": 1000
+  },
+  {
+    "k": 26,
+    "difficulty": 5,
+    "Average number of disk seek per search": 1,
+    "Average data read per search": 4096,
+    "total_time": 2.17494,
+    "time_per_search": 0.00217,
+    "throughput": 459.9,
+    "searches_found": 0,
+    "searches_not_found": 1000
+  },
+  {
+    "k": 32,
+    "difficulty": 3,
+    "Average number of disk seek per search": 1,
+    "Average data read per search": 4096,
+    "total_time": 1.86285,
+    "time_per_search": 0.00186,
+    "throughput": 537.1,
+    "searches_found": 1000,
+    "searches_not_found": 0
+  },
+  {
+    "k": 32,
+    "difficulty": 4,
+    "Average number of disk seek per search": 1,
+    "Average data read per search": 4096,
+    "total_time": 1.87287,
+    "time_per_search": 0.00187,
+    "throughput": 533.9,
+    "searches_found": 0,
+    "searches_not_found": 1000
+  },
+  {
+    "k": 32,
+    "difficulty": 5,
+    "Average number of disk seek per search": 1,
+    "Average data read per search": 4096,
+    "total_time": 1.86923,
+    "time_per_search": 0.00186,
+    "throughput": 535.1,
+    "searches_found": 0,
+    "searches_not_found": 1000
   }
-}
+]

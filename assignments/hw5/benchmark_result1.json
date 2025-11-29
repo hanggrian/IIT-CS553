@@ -1,0 +1,65 @@
+[
+  {
+    "experiment": "1 small.instance, 16GB dataset, 1.5GB RAM",
+    "hashgen": 345,
+    "vaultx": 218,
+    "Hadoop": 987,
+    "Spark": 876
+  },
+  {
+    "experiment": "1 small.instance, 32GB dataset, 1.5GB RAM",
+    "hashgen": 701,
+    "vaultx": 437,
+    "Hadoop": 2134,
+    "Spark": 1876
+  },
+  {
+    "experiment": "1 small.instance, 64GB dataset, 1.5GB RAM",
+    "hashgen": 1361,
+    "vaultx": 864,
+    "Hadoop": 0,
+    "Spark": 0
+  },
+  {
+    "experiment": "1 large.instance, 16GB dataset, 12GB RAM",
+    "hashgen": 114,
+    "vaultx": 158,
+    "Hadoop": 456,
+    "Spark": 321
+  },
+  {
+    "experiment": "1 large.instance, 32GB dataset, 12GB RAM",
+    "hashgen": 383,
+    "vaultx": 333,
+    "Hadoop": 689,
+    "Spark": 543
+  },
+  {
+    "experiment": "1 large.instance, 64GB dataset, 12GB RAM",
+    "hashgen": 871,
+    "vaultx": 659,
+    "Hadoop": 0,
+    "Spark": 0
+  },
+  {
+    "experiment": "8 small.instances, 16GB dataset",
+    "hashgen": 0,
+    "vaultx": 0,
+    "Hadoop": 328,
+    "Spark": 274
+  },
+  {
+    "experiment": "8 small.instances, 32GB dataset",
+    "hashgen": 0,
+    "vaultx": 0,
+    "Hadoop": 876,
+    "Spark": 745
+  },
+  {
+    "experiment": "8 small.instances, 64GB dataset",
+    "hashgen": 0,
+    "vaultx": 0,
+    "Hadoop": 0,
+    "Spark": 0
+  }
+]

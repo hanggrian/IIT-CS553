@@ -102,13 +102,6 @@ if is_os_type 'ubuntu|debian'; then
   sudo apt update
   sudo apt install -y "${UBUNTU_PACKAGES[@]}"
 
-  # Enable SSH
-  sudo systemctl enable --now ssh
-  ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
-  cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-  chmod 600 ~/.ssh/authorized_keys
-  ssh -o StrictHostKeyChecking=no localhost true
-
   # Download Hadoop
   hadoop_version='3.4.2'
   wget "https://downloads.apache.org/hadoop/common/hadoop-$hadoop_version/hadoop-$hadoop_version.tar.gz"

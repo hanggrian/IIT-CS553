@@ -625,8 +625,8 @@ generating and sorting the dataset.
 
 <img
   width="640px"
-  alt="Figure 1"
-  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/figure1.svg">
+  alt="Diagram 1"
+  src="https://github.com/hanggrian/IIT-CS553/raw/assets/assignments/hw1/diagram1.svg">
 
 ## Problem 4
 

@@ -22,9 +22,10 @@ fi
 if hdfs dfs -test -e "$OUTPUT_DIR"; then
   hdfs dfs -rm -r "$OUTPUT_DIR"
 fi
-time hadoop jar "$JAR_FILE" edu.illinoistech.hawk.hwijaya.HadoopVault \
-  "hdfs://$INPUT_DIR" \
-  "hdfs://$OUTPUT_DIR" \
-  1073741824 \
-  16 \
+time hadoop jar \
+  "$JAR_FILE" edu.illinoistech.hawk.hwijaya.HadoopVault \
+  "$INPUT_DIR" \
+  "$OUTPUT_DIR" \
+  65536 \
+  2 \
   2>&1 | tee hadoop.log

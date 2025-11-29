@@ -45,25 +45,16 @@ def latency_graph(
     figure, ((axes1, axes2), (axes3, axes4)) = pyplot.subplots(2, 2, figsize=(10, 6))
     figure.suptitle(f'{hardware_type} benchmark', fontweight='bold')
 
-    for host_type, metric in collection.items():
-        axes1.plot(
-            THREADS,
-            [metric[str(t)]['latency'] for t in THREADS],
-            's-',
-            label=f'{host_type}',
-        )
-        axes2.plot(
-            THREADS,
-            [metric[str(t)]['throughput'] for t in THREADS],
-            'o-',
-            label=f'{host_type}',
-        )
-        axes3.plot(
-            THREADS,
-            [metric[str(t)]['overheads'] for t in THREADS],
-            '^-',
-            label=f'{host_type}',
-        )
+    for host_type in ['bare-metal', 'container', 'vm']:
+        data_points = [item for item in collection if item['environment'] == host_type]
+        latencies = [next(d['latency'] for d in data_points if d['cores'] == t) for t in THREADS]
+        throughputs = \
+            [next(d['throughput'] for d in data_points if d['cores'] == t) for t in THREADS]
+        overheads = [next(d['overheads'] for d in data_points if d['cores'] == t) for t in THREADS]
+
+        axes1.plot(THREADS, latencies, 's-', label=f'{host_type}')
+        axes2.plot(THREADS, throughputs, 'o-', label=f'{host_type}')
+        axes3.plot(THREADS, overheads, '^-', label=f'{host_type}')
 
     axes1.set_xlabel('# of threads')
     axes1.set_ylabel(f'Latency{parenthesized_or_empty(latency_description)}')
@@ -102,25 +93,20 @@ def operations_graph(
     figure, ((axes1, axes2), (axes3, axes4)) = pyplot.subplots(2, 2, figsize=(10, 6))
     figure.suptitle(f'{hardware_type} benchmark', fontweight='bold')
 
-    for host_type, metric in collection.items():
-        axes1.plot(
-            THREADS,
-            [metric[str(t)]['operations'] for t in THREADS],
-            's-',
-            label=f'{host_type}',
-        )
-        axes2.plot(
-            THREADS,
-            [metric[str(t)]['throughput'] for t in THREADS],
-            'o-',
-            label=f'{host_type}',
-        )
-        axes3.plot(
-            THREADS,
-            [metric[str(t)]['efficiency'] for t in THREADS],
-            '^-',
-            label=f'{host_type}',
-        )
+    size_field = 'size' if hardware_type in ['Memory', 'Disk'] else 'connections'
+
+    for host_type in ['bare-metal', 'container', 'vm']:
+        data_points = [item for item in collection if item['environment'] == host_type]
+        operations = \
+            [next(d['operations'] for d in data_points if d[size_field] == t) for t in THREADS]
+        throughputs = \
+            [next(d['throughput'] for d in data_points if d[size_field] == t) for t in THREADS]
+        efficiencies = \
+            [next(d['efficiency'] for d in data_points if d[size_field] == t) for t in THREADS]
+
+        axes1.plot(THREADS, operations, 's-', label=f'{host_type}')
+        axes2.plot(THREADS, throughputs, 'o-', label=f'{host_type}')
+        axes3.plot(THREADS, efficiencies, '^-', label=f'{host_type}')
 
     axes1.set_xlabel('# of threads')
     axes1.set_ylabel(f'Operations{parenthesized_or_empty(operations_description)}')
