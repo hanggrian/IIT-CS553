@@ -291,7 +291,6 @@ Machine (and garbage collection) overhead, HDFS I/O performance or network
 latency between nodes. It would take up to two minutes for Hadoop and Spark jobs
 to spawn, submit and bound by all available eight `small.instance`s.
 
-
 <img
   width="100%"
   alt="Diagram 1"
@@ -301,13 +300,13 @@ Experiment | hashgen | vaultx | Hadoop sort | Spark sort
 --- | ---: | ---: | ---: | ---:
 1 `small.instance`, 16GB dataset, 1.5GB RAM | 345 | 218 | 987 | 876
 1 `small.instance`, 32GB dataset, 1.5GB RAM | 701 | 437 | 2134 | 1876
-1 `small.instance`, 64GB dataset, 1.5GB RAM | 1361 | 864 |  |
+1 `small.instance`, 64GB dataset, 1.5GB RAM | 1361 | 864 | |
 1 `large.instance`, 16GB dataset, 12GB RAM | 114 | 158 | 456 | 321
 1 `large.instance`, 32GB dataset, 12GB RAM | 383 | 333 | 689 | 543
-1 `large.instance`, 64GB dataset, 12GB RAM | 871 | 659 |  |
+1 `large.instance`, 64GB dataset, 12GB RAM | 871 | 659 | |
 8 `small.instance`s, 16GB dataset | N/A | N/A | 328 | 274
 8 `small.instance`s, 32GB dataset | N/A | N/A | 876 | 745
-8 `small.instance`s, 64GB dataset | N/A | N/A |  |
+8 `small.instance`s, 64GB dataset | N/A | N/A | |
 
 <small>Table 1: Performance evaluation (measured in seconds); each instance needs a `tiny.instance` for the name node</small>
 
@@ -368,11 +367,13 @@ The `vaultx` can only search generated datasets if the memory size is set to
 crashes as mentioned in Problem 1. Therefore, only 16GB dataset benchmarks are
 presented for `vaultx`.
 
-Although searching is mostly I/O bound, Hadoop and Spark jobs still suffer from
-slow startup times. For 1,000 searches on a 16GB dataset, both Hadoop and Spark
-take nearly a minute to complete, while `vaultx` finishes in under 0.1 seconds.
-`hashgen` performs the best on all datasets, but there is a bug that causes
-search results not to appear for difficulties larger than 3.
+Hadoop and Spark require a `tiny.instance` as the master node of the cluster. I
+have increased the memory limit from 4GB to 6GB to avoid the freezing issue when
+spawning jobs. Although searching is mostly I/O bound, Hadoop and Spark jobs
+still suffer from slow startup times. For 1,000 searches on a 16GB dataset, both
+Hadoop and Spark take nearly a minute to complete, while `vaultx` finishes in
+under 0.1 seconds. `hashgen` performs the best on all datasets, but there is a
+bug that causes search results not to appear for difficulties larger than 3.
 
 In the search benchmarks, the difficulty level does not seem to affect the
 searching time. The throughput grows linearly with the size of the dataset, but
@@ -393,19 +394,19 @@ hashgen | 32 | 3 | 1,000 | 1.498762 | 0.001499 | 667.0 | 1000 | 0
 hashgen | 32 | 4 | 1,000 | 1.276345 | 0.001276 | 784.0 | 0 | 1000
 vaultx | 30 | 3 | 1,000 | 0.059473 | 0.000059 | 16815.0 | 1000 | 0
 vaultx | 30 | 4 | 1,000 | 0.056022 | 0.000056 | 17853.0 | 207 | 793
-vaultx | 31 | 3 | 1,000 |  |  |  |  |
-vaultx | 31 | 4 | 1,000 |  |  |  |  |
-vaultx | 32 | 3 | 1,000 |  |  |  |  |
-vaultx | 32 | 4 | 1,000 |  |  |  |  |
+vaultx | 31 | 3 | 1,000 | | | | |
+vaultx | 31 | 4 | 1,000 | | | | |
+vaultx | 32 | 3 | 1,000 | | | | |
+vaultx | 32 | 4 | 1,000 | | | | |
 Hadoop | 30 | 3 | 1,000 | 54.321 | 0.054321 | 18.42 | 1000 | 0
 Hadoop | 30 | 4 | 1,000 | 52.876 | 0.052876 | 18.92 | 248 | 752
 Hadoop | 31 | 3 | 1,000 | 98.765 | 0.098765 | 10.13 | 1000 | 0
 Hadoop | 31 | 4 | 1,000 | 101.234 | 0.101234 | 9.88 | 192 | 808
-Hadoop | 32 | 3 | 1,000 |  |  |  |  |
-Hadoop | 32 | 4 | 1,000 |  |  |  |  |
+Hadoop | 32 | 3 | 1,000 | | | | |
+Hadoop | 32 | 4 | 1,000 | | | | |
 Spark | 30 | 3 | 1,000 | 43.567 | 0.043567 | 22.96 | 1000 | 0
 Spark | 30 | 4 | 1,000 | 44.123 | 0.044123 | 22.67 | 247 | 753
 Spark | 31 | 3 | 1,000 | 78.910 | 0.07891 | 12.67 | 1000 | 0
 Spark | 31 | 4 | 1,000 | 77.456 | 0.077456 | 12.91 | 201 | 799
-Spark | 32 | 3 | 1,000 |  |  |  |  |
-Spark | 32 | 4 | 1,000 |  |  |  |  |
+Spark | 32 | 3 | 1,000 | | | | |
+Spark | 32 | 4 | 1,000 | | | | |
